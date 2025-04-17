@@ -1,15 +1,19 @@
 {
     "version": "1.0.0",
-    "id": "app.vemto.plugin-base",
-    "name": "plugin-base",
-    "title": "Plugin Base",
-    "description": "A base for creating Vemto plugins",
+    "id": "com.kamansoft.laravel-blame",
+    "name": "laravel-blame",
+    "title": "Kamansoft Laravel Blame",
+    "description": "Plugin to use laravel blame with vemto app",
     "image": "",
     "main": "src/main.js",
-    "vueComponent": "dist/plugin-base.umd.min.js",
+    "vueComponent": "dist/laravel-blame.umd.min.js",
     "repository": {
         "type": "git",
-        "url": "https://github.com/TiagoSilvaPereira/vemto-plugin-base"
+        "url": "https://github.com/kamansoft/vemto-laravel-blame-plugin"
     },
-    "minVemtoVersion": "1.0.0"
+    "minVemtoVersion": "1.0.5",
+    "dependencies": {
+        "@vue/cli-service": "^5.0.8",
+        "vue-template-compiler": "^2.7.14"
+    }
 }
