@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "id": "app.vemto.plugin-base",
+    "name": "plugin-base",
+    "title": "Plugin Base",
+    "description": "A base for creating Vemto plugins",
+    "image": "",
+    "main": "src/main.js",
+    "vueComponent": "dist/plugin-base.umd.min.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TiagoSilvaPereira/vemto-plugin-base"
+    },
+    "minVemtoVersion": "1.0.0"
+}
