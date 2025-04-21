@@ -23,6 +23,9 @@ export default {
 
     created() {
         this.pluginData = window.vemtoApi.getPluginData()
+        this.pluginConsole = window.vemtoApi.pluginConsole
+        this.pluginConsole.log(this.pluginData)
+        window.vemtoApi.log.message('Plugin data:', this.pluginData)
         this.text = this.pluginData.text
     },
 

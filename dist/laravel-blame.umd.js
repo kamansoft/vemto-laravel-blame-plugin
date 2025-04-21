@@ -61,7 +61,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ const setPublicPath = (null);
 
-;// ../../../../.nvm/versions/node/v22.14.0/lib/node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../../../../.nvm/versions/node/v22.14.0/lib/node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/Component.vue?vue&type=template&id=6bd658bd
+;// ../../../../.nvm/versions/node/v22.14.0/lib/node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/loaders/templateLoader.js??vue-loader-options!../../../../.nvm/versions/node/v22.14.0/lib/node_modules/@vue/cli-service/node_modules/@vue/vue-loader-v15/lib/index.js??vue-loader-options!./src/Component.vue?vue&type=template&id=ad1945a8
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"w-full"},[_vm._v(" A simple Vemto Plugin base: "),_c('br'),_c('input',{directives:[{name:"model",rawName:"v-model",value:(_vm.text),expression:"text"}],staticClass:"input",attrs:{"type":"input"},domProps:{"value":(_vm.text)},on:{"input":function($event){if($event.target.composing){ return; }_vm.text=$event.target.value}}}),_c('br'),_c('button',{staticClass:"button-primary",on:{"click":_vm.save}},[_vm._v("Save")])])}
 var staticRenderFns = []
 
@@ -92,6 +92,9 @@ var staticRenderFns = []
 
     created() {
         this.pluginData = window.vemtoApi.getPluginData()
+        this.pluginConsole = window.vemtoApi.pluginConsole
+        this.pluginConsole.log(this.pluginData)
+        window.vemtoApi.log.message('Plugin data:', this.pluginData)
         this.text = this.pluginData.text
     },
 
