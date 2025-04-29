@@ -4,19 +4,19 @@
         <small class="mb-2">Select the Entities to set as Blamable, </small>
         
         <div class="mt-5" v-if="pluginData && projetcEntities.length > 0">
-            <label class="block text-sm font-bold mb-2">Project Entities</label>
+            <label class="block text-sm font-bold mb-2">Project Entities:</label>
 
             <div class="form-check mb-3">
                 <label class="inline-flex items-center" for="selectAllCruds">
                     <input class="form-checkbox" type="checkbox" id="selectAllCruds" @change="selectAllData" v-model="pluginData.allSelected">
-                    <span class="ml-2 text-gray-800 dark:text-gray-300">Select All-</span>
+                    <span class="ml-2 text-gray-800 dark:text-gray-300">Select All</span>
                 </label>
             </div>
             <template v-if="pluginData.entities && Object.keys(pluginData.entities).length > 0">
                 <div class="bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-900 p-2 rounded-md my-3" v-for="entity in projetcEntities" :key="'entity' + entity.id">
                     <div class="form-check">
                         <label class="inline-flex items-center text-gray-800" :for="entity.id">
-                            <input class="form-checkbox" type="checkbox" v-model="pluginData.entities[entity.id]['selected']" :id="entity.id" @change="toggleCrudData(entity)">
+                            <input class="form-checkbox" type="checkbox" v-model="pluginData.entities[entity.id]['selected']" :id="entity.id" @change="setEntitySelectedValue(entity)">
                             <span class="ml-2 text-gray-800 dark:text-gray-100">{{ entity.name }}</span>
                         </label>
                     </div>
@@ -55,7 +55,7 @@ export default {
         }
         this.projetcEntities = window.vemtoApi.getProject()?.entities || [];
 
-        this.pluginConsole.log(window.vemtoApi.getProject().entities)
+        //this.pluginConsole.log(this.pluginData)
 
         // Always check for new entities
         this.checkNewProjectEntities()
@@ -105,23 +105,17 @@ export default {
             this.pluginConsole.log('check finished')
             this.save()
         },
-        toggleCrudData(entity){
-            this.pluginConsole.log(this.pluginData.entities[entity.id]['selected']==='boolean')
-            this.pluginConsole.log(`before Toggled entity: ${entity.name} - ${(this.pluginData.entities[entity.id]['selected']===true)}`)
-            // Ensure the entity exists in pluginData before toggling
+        setEntitySelectedValue(entity){
+            // v-model already updated pluginData.entities[entity.id]['selected']
+            // We just need to ensure the entity exists and then save.
+            this.pluginConsole.log(`Entity ${entity.name} selected state changed to: ${this.pluginData.entities[entity.id]?.['selected']}`);
+
             if (this.pluginData.entities && this.pluginData.entities[entity.id]) {
-                // Ensure 'selected' property exists before toggling
-                if (typeof this.pluginData.entities[entity.id]['selected'] === 'boolean') {
-                    this.pluginData.entities[entity.id]['selected'] = !this.pluginData.entities[entity.id]['selected'];
-                } else {
-                    // Initialize if 'selected' is missing or not a boolean
-                    this.pluginData.entities[entity.id]['selected'] = true; // Or false, depending on desired default toggle state
-                }
-                this.save() // Call save directly, no need for savePluginData wrapper if save does it
+                // The value is already set by v-model, just save the state.
+                this.save();
             } else {
-                this.pluginConsole.error(`Attempted to toggle non-existent entity: ${entity.id}`);
+                this.pluginConsole.error(`Attempted to save non-existent entity data: ${entity.id}`);
             }
-            this.pluginConsole.log(`Toggled entity: ${entity.name} - ${this.pluginData.entities[entity.id]['selected']}`)
         },
         selectAllData() {
             const newState = this.pluginData.allSelected; // The state *after* the checkbox is clicked
@@ -137,6 +131,7 @@ export default {
                 allSelected: this.pluginData.allSelected ?? false,
             })
             this.pluginConsole.log('Saved plugin data')
+            this.pluginConsole.log(this.pluginData)
         }, 300)
     }
 }
