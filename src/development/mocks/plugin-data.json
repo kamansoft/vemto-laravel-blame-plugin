@@ -1,0 +1,9 @@
+{
+    "entities": {
+        "9": { "id": 9, "name": "User", "selected": false },
+        "10": { "id": 10, "name": "AccountType", "selected": false },
+        "11": { "id": 11, "name": "Account", "selected": false },
+        "13": { "id": 13, "name": "Foo", "selected": true }
+    },
+    "allSelected": false
+}

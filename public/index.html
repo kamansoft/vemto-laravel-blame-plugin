@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Vemto Plugin Dev</title>
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Add Tailwind CSS CDN -->
+
+        <script>
+        console.log('[Base Mock HTML] Defining base window.vemtoApi...');
+        window.vemtoApi = {
+            // Default debounce (can be overridden by plugin)
+            debounce: function(func, wait) {
+                console.log(`[Base Mock HTML] debounce called. Wait: ${wait}. Returning original function.`);
+                return func; // No debouncing in base mock
+            }
+        };
+        console.log('[Base Mock HTML] Base window.vemtoApi defined:', window.vemtoApi);
+    </script>
+  </head>
+  <body style="background-color: #242c39; color: #fff; font-family: Arial, sans-serif;">
+    <noscript>
+      <strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app-warper" style="padding: 20px;">
+      <div id="app" ></div>
+    </div>
+     <!-- Added padding for better viewing -->
+    <!-- built files will be auto injected -->
+  </body>
+</html>
