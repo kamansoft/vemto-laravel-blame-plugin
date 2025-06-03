@@ -1,12 +1,12 @@
 {
     "version": "1.0.0",
-    "id": "com.kamansoft.laravel-blame",
-    "name": "laravel-blame",
+    "id": "com.kamansoft.vento-laravel-blame-plugin",
+    "name": "kamansoft-vento-laravel-blame-plugin",
     "title": "Kamansoft Laravel Blame",
     "description": "Plugin to use laravel blame with vemto app",
     "image": "",
     "main": "src/main.js",
-    "vueComponent": "dist/laravel-blame.umd.min.js",
+    "vueComponent": "dist/kamansoft-laravel-blame.umd.min.js",
     "repository": {
         "type": "git",
         "url": "https://github.com/kamansoft/vemto-laravel-blame-plugin"
