@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
-    "id": "com.kamansoft.vento-laravel-blame-plugin",
-    "name": "kamansoft-vento-laravel-blame-plugin",
+    "id": "com.kamansoft.vemto-laravel-blame-plugin",
+    "name": "kamansoft-vemto-laravel-blame-plugin",
     "title": "Kamansoft Laravel Blame",
     "description": "Plugin to use laravel blame with vemto app",
     "image": "",
