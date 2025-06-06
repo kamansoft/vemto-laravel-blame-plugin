@@ -1,0 +1,295 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x/projects by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:09:20 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Projects | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="../1.x/projects.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="projects.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../1.x/projects.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-projects"></a></p>
+<h1>Projects</h1>
+<hr />
+<p>Each <em>Vemto Project</em> is related to a Laravel application in a separate folder.</p>
+<p>All projects can be accessed from the <strong>Vemto Home Page</strong>:</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102401539-447a4080-3fc2-11eb-8ef5-85161c4f98e3.png" alt="Projects" /></p>
+<ul>
+<li><a href="projects.html#-projects"># Projects</a></li>
+<li><a href="projects.html#creating">Creating</a></li>
+<li><a href="projects.html#updating">Updating</a></li>
+<li><a href="projects.html#general-settings">General Settings</a></li>
+<li><a href="projects.html#views-settings">Views Settings</a></li>
+<li><a href="projects.html#folders-settings">Folders Settings</a></li>
+</ul>
+<p><a name="creating"></a></p>
+<h2>Creating</h2>
+<p>To create a new project, just click on the <strong>New Project</strong> button on the <strong>Home Page</strong>.</p>
+<p><br/></p>
+<p>Then, on the <strong>Create Project</strong> page, fill all the obligatory fields. Vemto will generate the code in a folder inside the folder you select here. For example, if you select <code>/home/john</code> and your project is named <em>My Project</em>, it will generate the <code>/home/john/my-project</code> folder after generating the code. Then, just hit the <strong>Create</strong> button.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102402119-147f6d00-3fc3-11eb-9331-8d846aee4481.png" alt="image" />  </p>
+<blockquote>
+<p>{warning} Vemto currently doesn't generate the database itself. So, it is necessary to create the database manually on your SGBD before trying to run your code</p>
+</blockquote>
+<p><a name="updating"></a></p>
+<h2>Updating</h2>
+<p>You can update the project details on the <strong>Project Settings</strong> section under the project, in the <strong>Metadata</strong> tab.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102404971-35e25800-3fc7-11eb-89af-a9dccef88991.png" alt="Update Settings" /></p>
+<blockquote>
+<p>{warning} Changing the project folder or name will generate the code in a different folder from the original</p>
+</blockquote>
+<p><a name="general-settings"></a></p>
+<h2>General Settings</h2>
+<p>Here you can see all the project <em>General Settings</em> and how it matters for code generation:</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102406433-50b5cc00-3fc9-11eb-9bab-c5f4e830e1f3.png" alt="image" /></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mass Assignment Strategy</td>
+<td>Defines if the Models will use <em>fillable</em> or <em>guarded</em> strategy for <em>Mass Assignment</em>. When changed, the Shema Editor will reflect the setting and will show the correct checkbox for Model or table fields</td>
+</tr>
+<tr>
+<td>Controller Name Mode</td>
+<td>Defines if controllers names are plural or singular</td>
+</tr>
+<tr>
+<td>Validation Mode</td>
+<td>Defines if the validation rules will use <em>array mode</em> or <em>string mode</em> (separated by &quot;|&quot;)</td>
+</tr>
+<tr>
+<td>Routes Mode</td>
+<td>Defines if the routes will be generated as <em>resources</em> or <em>inline</em>. When <em>Inline Mode</em> is selected, each route is generated separately. It is very util when using Models that don't have an English name, as Vemto generates resource routes assuming you are using English model names</td>
+</tr>
+<tr>
+<td>Authentication Model</td>
+<td>Defines the model that is responsible for authentication. By default, it is the <em>User</em> model</td>
+</tr>
+</tbody>
+</table>
+<p><a name="views-settings"></a></p>
+<h2>Views Settings</h2>
+<p>Here you can see all the project <em>Views Settings</em> and how it matters for code generation:</p>
+<p><br/></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CSS Framework</td>
+<td>Defines the CSS framework for views</td>
+</tr>
+<tr>
+<td>Theme</td>
+<td>Defines the CSS theme</td>
+</tr>
+<tr>
+<td>Turbolinks</td>
+<td>Defines whether to use <a href="../../../github.com/turbolinks/turbolinks.html">Turbolinks</a> or not. <a href="../../../github.com/turbolinks/turbolinks.html">Turbolinks</a> is a library that makes navigating your web application much faster</td>
+</tr>
+</tbody>
+</table>
+<p><a name="folders-settings"></a></p>
+<h2>Folders Settings</h2>
+<p>In the <em>Folders Settings</em> tab, you can change the default path where Vemto generates the code for different types of files. </p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102495621-11cd5800-4055-11eb-8cab-644b4899f860.png" alt="Folders Settings" /></p>
+<blockquote>
+<p>{info} Changing the path on the <strong>Folders Settings</strong> tab <em>reflects directly</em> to the <strong>Namespace</strong>.</p>
+</blockquote>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x/projects by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:09:20 GMT -->
+</html>

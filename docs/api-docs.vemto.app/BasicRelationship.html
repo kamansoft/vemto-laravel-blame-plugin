@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Mirrored from api-docs.vemto.app/BasicRelationship.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:17:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    
+    <meta charset="utf-8">
+    <title>BasicRelationship - Documentation</title>
+    
+    
+    <script src="scripts/prettify/prettify.js"></script>
+    <script src="scripts/prettify/lang-css.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc.css">
+    <script src="scripts/nav.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+<label for="nav-trigger" class="navicon-button x">
+  <div class="navicon"></div>
+</label>
+
+<label for="nav-trigger" class="overlay"></label>
+
+<nav >
+    
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="BasicRelationship.html">BasicRelationship</a><ul class='methods'><li data-type='method'><a href="BasicRelationship.html#belongsToModel">belongsToModel</a></li><li data-type='method'><a href="BasicRelationship.html#getApiRoutes">getApiRoutes</a></li><li data-type='method'><a href="BasicRelationship.html#getControllerName">getControllerName</a></li><li data-type='method'><a href="BasicRelationship.html#getDefaultForeignKeyName">getDefaultForeignKeyName</a></li><li data-type='method'><a href="BasicRelationship.html#getDefaultKeysNames">getDefaultKeysNames</a></li><li data-type='method'><a href="BasicRelationship.html#getForeignModel">getForeignModel</a></li><li data-type='method'><a href="BasicRelationship.html#getParentModel">getParentModel</a></li><li data-type='method'><a href="BasicRelationship.html#hasDifferentForeignKey">hasDifferentForeignKey</a></li><li data-type='method'><a href="BasicRelationship.html#hasDifferentForeignOrParentKey">hasDifferentForeignOrParentKey</a></li><li data-type='method'><a href="BasicRelationship.html#hasDifferentParentKey">hasDifferentParentKey</a></li><li data-type='method'><a href="BasicRelationship.html#isBelongsTo">isBelongsTo</a></li><li data-type='method'><a href="BasicRelationship.html#isHasMany">isHasMany</a></li><li data-type='method'><a href="BasicRelationship.html#isHasOne">isHasOne</a></li></ul></li><li><a href="Crud.html">Crud</a><ul class='methods'><li data-type='method'><a href="Crud.html#getApiNamespace">getApiNamespace</a></li><li data-type='method'><a href="Crud.html#getApiRoutes">getApiRoutes</a></li><li data-type='method'><a href="Crud.html#getBelongsToInputs">getBelongsToInputs</a></li><li data-type='method'><a href="Crud.html#getBelongsToInputsGroupedByCollection">getBelongsToInputsGroupedByCollection</a></li><li data-type='method'><a href="Crud.html#getCheckboxInputs">getCheckboxInputs</a></li><li data-type='method'><a href="Crud.html#getControllerName">getControllerName</a></li><li data-type='method'><a href="Crud.html#getDateAndDatetimeInputs">getDateAndDatetimeInputs</a></li><li data-type='method'><a href="Crud.html#getDateInputs">getDateInputs</a></li><li data-type='method'><a href="Crud.html#getDatetimeInputs">getDatetimeInputs</a></li><li data-type='method'><a href="Crud.html#getEmailInputs">getEmailInputs</a></li><li data-type='method'><a href="Crud.html#getFileAndImageInputs">getFileAndImageInputs</a></li><li data-type='method'><a href="Crud.html#getFileInputs">getFileInputs</a></li><li data-type='method'><a href="Crud.html#getHiddenInputs">getHiddenInputs</a></li><li data-type='method'><a href="Crud.html#getImageInputs">getImageInputs</a></li><li data-type='method'><a href="Crud.html#getInput">getInput</a></li><li data-type='method'><a href="Crud.html#getJsonInputs">getJsonInputs</a></li><li data-type='method'><a href="Crud.html#getNamespace">getNamespace</a></li><li data-type='method'><a href="Crud.html#getNumericInputs">getNumericInputs</a></li><li data-type='method'><a href="Crud.html#getPasswordInputs">getPasswordInputs</a></li><li data-type='method'><a href="Crud.html#getRoutesPrefix">getRoutesPrefix</a></li><li data-type='method'><a href="Crud.html#getSelectInputs">getSelectInputs</a></li><li data-type='method'><a href="Crud.html#getTextareaInputs">getTextareaInputs</a></li><li data-type='method'><a href="Crud.html#getTextInputs">getTextInputs</a></li><li data-type='method'><a href="Crud.html#getUrlInputs">getUrlInputs</a></li><li data-type='method'><a href="Crud.html#getViewsPrefix">getViewsPrefix</a></li><li data-type='method'><a href="Crud.html#hasBelongsToInputs">hasBelongsToInputs</a></li><li data-type='method'><a href="Crud.html#hasCheckboxInputs">hasCheckboxInputs</a></li><li data-type='method'><a href="Crud.html#hasDateInputs">hasDateInputs</a></li><li data-type='method'><a href="Crud.html#hasDateOrDatetimeInputs">hasDateOrDatetimeInputs</a></li><li data-type='method'><a href="Crud.html#hasDatetimeInputs">hasDatetimeInputs</a></li><li data-type='method'><a href="Crud.html#hasDifferentUpdateValidation">hasDifferentUpdateValidation</a></li><li data-type='method'><a href="Crud.html#hasEmailInputs">hasEmailInputs</a></li><li data-type='method'><a href="Crud.html#hasFileInputs">hasFileInputs</a></li><li data-type='method'><a href="Crud.html#hasFileOrImageInputs">hasFileOrImageInputs</a></li><li data-type='method'><a href="Crud.html#hasHasManyDetail">hasHasManyDetail</a></li><li data-type='method'><a href="Crud.html#hasHiddenInputs">hasHiddenInputs</a></li><li data-type='method'><a href="Crud.html#hasImageInputs">hasImageInputs</a></li><li data-type='method'><a href="Crud.html#hasJsonInputs">hasJsonInputs</a></li><li data-type='method'><a href="Crud.html#hasNumericInputs">hasNumericInputs</a></li><li data-type='method'><a href="Crud.html#hasPasswordInputs">hasPasswordInputs</a></li><li data-type='method'><a href="Crud.html#hasSelectInputs">hasSelectInputs</a></li><li data-type='method'><a href="Crud.html#hasTextareaInputs">hasTextareaInputs</a></li><li data-type='method'><a href="Crud.html#hasTextInputs">hasTextInputs</a></li><li data-type='method'><a href="Crud.html#hasUrlInputs">hasUrlInputs</a></li></ul></li><li><a href="Entity.html">Entity</a><ul class='methods'><li data-type='method'><a href="Entity.html#belongsToAnotherEntity">belongsToAnotherEntity</a></li><li data-type='method'><a href="Entity.html#dateFields">dateFields</a></li><li data-type='method'><a href="Entity.html#fillableFields">fillableFields</a></li><li data-type='method'><a href="Entity.html#fillableFieldsWithoutInputs">fillableFieldsWithoutInputs</a></li><li data-type='method'><a href="Entity.html#foreignFields">foreignFields</a></li><li data-type='method'><a href="Entity.html#getAllMorphRelationships">getAllMorphRelationships</a></li><li data-type='method'><a href="Entity.html#getAllRelationships">getAllRelationships</a></li><li data-type='method'><a href="Entity.html#getBasicMorphInverseRelationships">getBasicMorphInverseRelationships</a></li><li data-type='method'><a href="Entity.html#getBasicMorphRelatedRelationships">getBasicMorphRelatedRelationships</a></li><li data-type='method'><a href="Entity.html#getBasicMorphRelationships">getBasicMorphRelationships</a></li><li data-type='method'><a href="Entity.html#getBelongsToManyRelationships">getBelongsToManyRelationships</a></li><li data-type='method'><a href="Entity.html#getBelongsToRelationships">getBelongsToRelationships</a></li><li data-type='method'><a href="Entity.html#getControllerName">getControllerName</a></li><li data-type='method'><a href="Entity.html#getFieldByName">getFieldByName</a></li><li data-type='method'><a href="Entity.html#getHasManyRelationships">getHasManyRelationships</a></li><li data-type='method'><a href="Entity.html#getHasOneRelationships">getHasOneRelationships</a></li><li data-type='method'><a href="Entity.html#getLabelField">getLabelField</a></li><li data-type='method'><a href="Entity.html#getLabelFieldName">getLabelFieldName</a></li><li data-type='method'><a href="Entity.html#getManyToManyMorphRelatedRelationships">getManyToManyMorphRelatedRelationships</a></li><li data-type='method'><a href="Entity.html#getManyToManyMorphRelationships">getManyToManyMorphRelationships</a></li><li data-type='method'><a href="Entity.html#getPkName">getPkName</a></li><li data-type='method'><a href="Entity.html#getPrimaryKey">getPrimaryKey</a></li><li data-type='method'><a href="Entity.html#getPrimaryKeyName">getPrimaryKeyName</a></li><li data-type='method'><a href="Entity.html#getSelfRelationships">getSelfRelationships</a></li><li data-type='method'><a href="Entity.html#getSelfRelationshipsForeigns">getSelfRelationshipsForeigns</a></li><li data-type='method'><a href="Entity.html#getSelfRelationshipsForeignsNames">getSelfRelationshipsForeignsNames</a></li><li data-type='method'><a href="Entity.html#guardedFields">guardedFields</a></li><li data-type='method'><a href="Entity.html#hasCastFields">hasCastFields</a></li><li data-type='method'><a href="Entity.html#hasDateFields">hasDateFields</a></li><li data-type='method'><a href="Entity.html#hasFieldByName">hasFieldByName</a></li><li data-type='method'><a href="Entity.html#hasFieldWithSameName">hasFieldWithSameName</a></li><li data-type='method'><a href="Entity.html#hasFillableFields">hasFillableFields</a></li><li data-type='method'><a href="Entity.html#hasForeigns">hasForeigns</a></li><li data-type='method'><a href="Entity.html#hasHiddenFields">hasHiddenFields</a></li><li data-type='method'><a href="Entity.html#hasIndexFields">hasIndexFields</a></li><li data-type='method'><a href="Entity.html#hasJsonFields">hasJsonFields</a></li><li data-type='method'><a href="Entity.html#hasManyOfAnotherEntity">hasManyOfAnotherEntity</a></li><li data-type='method'><a href="Entity.html#hasSimilarRelationship">hasSimilarRelationship</a></li><li data-type='method'><a href="Entity.html#hasUniqueFields">hasUniqueFields</a></li><li data-type='method'><a href="Entity.html#hiddenFields">hiddenFields</a></li><li data-type='method'><a href="Entity.html#indexFields">indexFields</a></li><li data-type='method'><a href="Entity.html#is">is</a></li><li data-type='method'><a href="Entity.html#isAuthModel">isAuthModel</a></li><li data-type='method'><a href="Entity.html#isModel">isModel</a></li><li data-type='method'><a href="Entity.html#isObligatoryParentOfAnotherEntity">isObligatoryParentOfAnotherEntity</a></li><li data-type='method'><a href="Entity.html#isTable">isTable</a></li><li data-type='method'><a href="Entity.html#jsonFields">jsonFields</a></li><li data-type='method'><a href="Entity.html#tableNameFollowsStandard">tableNameFollowsStandard</a></li><li data-type='method'><a href="Entity.html#uniqueFields">uniqueFields</a></li><li data-type='method'><a href="Entity.html#validFields">validFields</a></li></ul></li><li><a href="Field.html">Field</a><ul class='methods'><li data-type='method'><a href="Field.html#getBelongsToRelationship">getBelongsToRelationship</a></li><li data-type='method'><a href="Field.html#getDefaultForTemplate">getDefaultForTemplate</a></li><li data-type='method'><a href="Field.html#getFakerForTemplate">getFakerForTemplate</a></li><li data-type='method'><a href="Field.html#getForeignType">getForeignType</a></li><li data-type='method'><a href="Field.html#getType">getType</a></li><li data-type='method'><a href="Field.html#hasFaker">hasFaker</a></li><li data-type='method'><a href="Field.html#isBoolean">isBoolean</a></li><li data-type='method'><a href="Field.html#isDate">isDate</a></li><li data-type='method'><a href="Field.html#isDateTime">isDateTime</a></li><li data-type='method'><a href="Field.html#isEnum">isEnum</a></li><li data-type='method'><a href="Field.html#isForeignKey">isForeignKey</a></li><li data-type='method'><a href="Field.html#isIndex">isIndex</a></li><li data-type='method'><a href="Field.html#isJson">isJson</a></li><li data-type='method'><a href="Field.html#isPrimaryKey">isPrimaryKey</a></li><li data-type='method'><a href="Field.html#isSpecialPrimaryKey">isSpecialPrimaryKey</a></li><li data-type='method'><a href="Field.html#isString">isString</a></li><li data-type='method'><a href="Field.html#isTextual">isTextual</a></li><li data-type='method'><a href="Field.html#isUnique">isUnique</a></li><li data-type='method'><a href="Field.html#isUuid">isUuid</a></li><li data-type='method'><a href="Field.html#isValid">isValid</a></li><li data-type='method'><a href="Field.html#needsCasting">needsCasting</a></li><li data-type='method'><a href="Field.html#notValid">notValid</a></li><li data-type='method'><a href="Field.html#references">references</a></li></ul></li><li><a href="Foreign.html">Foreign</a></li><li><a href="HasManyDetail.html">HasManyDetail</a><ul class='methods'><li data-type='method'><a href="HasManyDetail.html#getComponentName">getComponentName</a></li><li data-type='method'><a href="HasManyDetail.html#getLivewireViewName">getLivewireViewName</a></li></ul></li><li><a href="Input.html">Input</a><ul class='methods'><li data-type='method'><a href="Input.html#allowsDefaultValue">allowsDefaultValue</a></li><li data-type='method'><a href="Input.html#allowsItems">allowsItems</a></li><li data-type='method'><a href="Input.html#allowsMax">allowsMax</a></li><li data-type='method'><a href="Input.html#allowsMin">allowsMin</a></li><li data-type='method'><a href="Input.html#allowsPlaceholder">allowsPlaceholder</a></li><li data-type='method'><a href="Input.html#canUseLivewireReference">canUseLivewireReference</a></li><li data-type='method'><a href="Input.html#convertValidationToArrayForTemplate">convertValidationToArrayForTemplate</a></li><li data-type='method'><a href="Input.html#convertValidationToTextForTemplate">convertValidationToTextForTemplate</a></li><li data-type='method'><a href="Input.html#getFirstItem">getFirstItem</a></li><li data-type='method'><a href="Input.html#getLivewirePropertyReference">getLivewirePropertyReference</a></li><li data-type='method'><a href="Input.html#getLivewireSingleName">getLivewireSingleName</a></li><li data-type='method'><a href="Input.html#getRelationshipCollectionName">getRelationshipCollectionName</a></li><li data-type='method'><a href="Input.html#getRequiredAttributeForTemplate">getRequiredAttributeForTemplate</a></li><li data-type='method'><a href="Input.html#getType">getType</a></li><li data-type='method'><a href="Input.html#getUpdateValidationWithUniqueRules">getUpdateValidationWithUniqueRules</a></li><li data-type='method'><a href="Input.html#getValidationForTemplate">getValidationForTemplate</a></li><li data-type='method'><a href="Input.html#hasDifferentUpdateValidation">hasDifferentUpdateValidation</a></li><li data-type='method'><a href="Input.html#hasStep">hasStep</a></li><li data-type='method'><a href="Input.html#hasUpdateValidation">hasUpdateValidation</a></li><li data-type='method'><a href="Input.html#hasValidation">hasValidation</a></li><li data-type='method'><a href="Input.html#isAllowedOnIndexPages">isAllowedOnIndexPages</a></li><li data-type='method'><a href="Input.html#isDate">isDate</a></li><li data-type='method'><a href="Input.html#isFile">isFile</a></li><li data-type='method'><a href="Input.html#isForEnum">isForEnum</a></li><li data-type='method'><a href="Input.html#isForRelationship">isForRelationship</a></li><li data-type='method'><a href="Input.html#isImage">isImage</a></li><li data-type='method'><a href="Input.html#isJson">isJson</a></li><li data-type='method'><a href="Input.html#isLinkedToField">isLinkedToField</a></li><li data-type='method'><a href="Input.html#isNumeric">isNumeric</a></li><li data-type='method'><a href="Input.html#isPassword">isPassword</a></li><li data-type='method'><a href="Input.html#isRelatedToModel">isRelatedToModel</a></li><li data-type='method'><a href="Input.html#isRequiredOnCreate">isRequiredOnCreate</a></li><li data-type='method'><a href="Input.html#isRequiredOnUpdate">isRequiredOnUpdate</a></li><li data-type='method'><a href="Input.html#isSelect">isSelect</a></li><li data-type='method'><a href="Input.html#isUrl">isUrl</a></li><li data-type='method'><a href="Input.html#needsMaxValidation">needsMaxValidation</a></li><li data-type='method'><a href="Input.html#needsMinValidation">needsMinValidation</a></li></ul></li><li><a href="LogBase.html">LogBase</a><ul class='methods'><li data-type='method'><a href="LogBase.html#detail">detail</a></li><li data-type='method'><a href="LogBase.html#error">error</a></li><li data-type='method'><a href="LogBase.html#info">info</a></li><li data-type='method'><a href="LogBase.html#message">message</a></li><li data-type='method'><a href="LogBase.html#success">success</a></li><li data-type='method'><a href="LogBase.html#text">text</a></li><li data-type='method'><a href="LogBase.html#warning">warning</a></li></ul></li><li><a href="ManyToManyComponent.html">ManyToManyComponent</a><ul class='methods'><li data-type='method'><a href="ManyToManyComponent.html#getDefaultCondition">getDefaultCondition</a></li><li data-type='method'><a href="ManyToManyComponent.html#isCheckboxGroup">isCheckboxGroup</a></li></ul></li><li><a href="ManyToManyRelationship.html">ManyToManyRelationship</a><ul class='methods'><li data-type='method'><a href="ManyToManyRelationship.html#getApiRoutes">getApiRoutes</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getControllerName">getControllerName</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getDefaultKeys">getDefaultKeys</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getDefaultKeysNames">getDefaultKeysNames</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getDefaultLocalModelKeyName">getDefaultLocalModelKeyName</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getDefaultModelKeyName">getDefaultModelKeyName</a></li><li data-type='method'><a href="ManyToManyRelationship.html#getDefaultPivotName">getDefaultPivotName</a></li><li data-type='method'><a href="ManyToManyRelationship.html#hasDifferentLocalModelKey">hasDifferentLocalModelKey</a></li><li data-type='method'><a href="ManyToManyRelationship.html#hasDifferentLocalOrRelatedModelKeys">hasDifferentLocalOrRelatedModelKeys</a></li><li data-type='method'><a href="ManyToManyRelationship.html#hasDifferentModelKey">hasDifferentModelKey</a></li><li data-type='method'><a href="ManyToManyRelationship.html#hasDifferentPivot">hasDifferentPivot</a></li><li data-type='method'><a href="ManyToManyRelationship.html#needsToAddPivotToModelTemplate">needsToAddPivotToModelTemplate</a></li></ul></li><li><a href="MorphRelationship.html">MorphRelationship</a><ul class='methods'><li data-type='method'><a href="MorphRelationship.html#getCorrectAbleSuffix">getCorrectAbleSuffix</a></li><li data-type='method'><a href="MorphRelationship.html#getDefaultModelKeyName">getDefaultModelKeyName</a></li><li data-type='method'><a href="MorphRelationship.html#getMorphableFields">getMorphableFields</a></li><li data-type='method'><a href="MorphRelationship.html#getType">getType</a></li></ul></li><li><a href="Project.html">Project</a><ul class='methods'><li data-type='method'><a href="Project.html#deleteFile">deleteFile</a></li><li data-type='method'><a href="Project.html#deleteFolder">deleteFolder</a></li><li data-type='method'><a href="Project.html#findEntityByName">findEntityByName</a></li><li data-type='method'><a href="Project.html#findEntityByTableName">findEntityByTableName</a></li><li data-type='method'><a href="Project.html#getDefaultRepositoryBranch">getDefaultRepositoryBranch</a></li><li data-type='method'><a href="Project.html#getDefaultRepositoryUrl">getDefaultRepositoryUrl</a></li><li data-type='method'><a href="Project.html#getFullFilePath">getFullFilePath</a></li><li data-type='method'><a href="Project.html#getHasManyDetailCruds">getHasManyDetailCruds</a></li><li data-type='method'><a href="Project.html#getMainCruds">getMainCruds</a></li><li data-type='method'><a href="Project.html#getRepositoryBranch">getRepositoryBranch</a></li><li data-type='method'><a href="Project.html#getRepositoryUrl">getRepositoryUrl</a></li><li data-type='method'><a href="Project.html#getUiTemplateDescription">getUiTemplateDescription</a></li><li data-type='method'><a href="Project.html#getValidCruds">getValidCruds</a></li><li data-type='method'><a href="Project.html#hasEntityByName">hasEntityByName</a></li><li data-type='method'><a href="Project.html#hasFile">hasFile</a></li><li data-type='method'><a href="Project.html#hasFolder">hasFolder</a></li><li data-type='method'><a href="Project.html#needsBootstrapPaginator">needsBootstrapPaginator</a></li><li data-type='method'><a href="Project.html#rootFolderExistsAndIsNotEmpty">rootFolderExistsAndIsNotEmpty</a></li><li data-type='method'><a href="Project.html#usesBootstrap">usesBootstrap</a></li><li data-type='method'><a href="Project.html#usesBreezeTemplate">usesBreezeTemplate</a></li><li data-type='method'><a href="Project.html#usesJetstreamTemplate">usesJetstreamTemplate</a></li><li data-type='method'><a href="Project.html#usesLaravelUiTemplate">usesLaravelUiTemplate</a></li><li data-type='method'><a href="Project.html#usesSanctumAuth">usesSanctumAuth</a></li><li data-type='method'><a href="Project.html#usesTailwind">usesTailwind</a></li><li data-type='method'><a href="Project.html#viewsPath">viewsPath</a></li><li data-type='method'><a href="Project.html#wasNotGeneratedYet">wasNotGeneratedYet</a></li></ul></li><li><a href="ProjectHelper.html">ProjectHelper</a><ul class='methods'><li data-type='method'><a href="ProjectHelper.html#getApiControllersNamespace">getApiControllersNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getApiTestNamespace">getApiTestNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getControllersNamespace">getControllersNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getModelsNamespace">getModelsNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getPoliciesNamespace">getPoliciesNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getRequestsNamespace">getRequestsNamespace</a></li><li data-type='method'><a href="ProjectHelper.html#getTestNamespace">getTestNamespace</a></li></ul></li><li><a href="RelationshipComponent.html">RelationshipComponent</a></li><li><a href="Vemto.html">Vemto</a><ul class='methods'><li data-type='method'><a href="Vemto.html#addBlockReason">addBlockReason</a></li><li data-type='method'><a href="Vemto.html#addEntityMarker">addEntityMarker</a></li><li data-type='method'><a href="Vemto.html#debounce">debounce</a></li><li data-type='method'><a href="Vemto.html#disableDefaultRunnerMigrations">disableDefaultRunnerMigrations</a></li><li data-type='method'><a href="Vemto.html#disableDefaultRunnerServer">disableDefaultRunnerServer</a></li><li data-type='method'><a href="Vemto.html#disableDefaultRunnerWebPageTrigger">disableDefaultRunnerWebPageTrigger</a></li><li data-type='method'><a href="Vemto.html#executeArtisan">executeArtisan</a></li><li data-type='method'><a href="Vemto.html#executeCommand">executeCommand</a></li><li data-type='method'><a href="Vemto.html#executeComposer">executeComposer</a></li><li data-type='method'><a href="Vemto.html#executeNpm">executeNpm</a></li><li data-type='method'><a href="Vemto.html#executePhp">executePhp</a></li><li data-type='method'><a href="Vemto.html#executePostComposer">executePostComposer</a></li><li data-type='method'><a href="Vemto.html#formatByLanguage">formatByLanguage</a></li><li data-type='method'><a href="Vemto.html#getMultiTenancyStrategy">getMultiTenancyStrategy</a></li><li data-type='method'><a href="Vemto.html#getPluginData">getPluginData</a></li><li data-type='method'><a href="Vemto.html#getProject">getProject</a></li><li data-type='method'><a href="Vemto.html#getProjectEntities">getProjectEntities</a></li><li data-type='method'><a href="Vemto.html#getProjectModels">getProjectModels</a></li><li data-type='method'><a href="Vemto.html#getProjectSettings">getProjectSettings</a></li><li data-type='method'><a href="Vemto.html#openLink">openLink</a></li><li data-type='method'><a href="Vemto.html#parsePhp">parsePhp</a></li><li data-type='method'><a href="Vemto.html#pluginFileExists">pluginFileExists</a></li><li data-type='method'><a href="Vemto.html#pluginFolderExists">pluginFolderExists</a></li><li data-type='method'><a href="Vemto.html#projectFileExists">projectFileExists</a></li><li data-type='method'><a href="Vemto.html#projectFolderExists">projectFolderExists</a></li><li data-type='method'><a href="Vemto.html#projectHasMultiTenancy">projectHasMultiTenancy</a></li><li data-type='method'><a href="Vemto.html#readPluginFile">readPluginFile</a></li><li data-type='method'><a href="Vemto.html#readProjectFile">readProjectFile</a></li><li data-type='method'><a href="Vemto.html#registerProjectFile">registerProjectFile</a></li><li data-type='method'><a href="Vemto.html#renderTemplate">renderTemplate</a></li><li data-type='method'><a href="Vemto.html#replaceTemplate">replaceTemplate</a></li><li data-type='method'><a href="Vemto.html#savePluginData">savePluginData</a></li><li data-type='method'><a href="Vemto.html#writePluginFile">writePluginFile</a></li><li data-type='method'><a href="Vemto.html#writeProjectFile">writeProjectFile</a></li></ul></li></ul>
+</nav>
+
+<div id="main">
+    
+    <h1 class="page-title">BasicRelationship</h1>
+    
+
+    
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>
+        BasicRelationship
+        </h2>
+        
+    
+</header>
+
+<article>
+    
+        <div class="container-overview">
+        
+            
+
+    
+
+    <h4 class="name" id="BasicRelationship"><span class="type-signature"></span>new BasicRelationship<span class="signature">()</span><span class="type-signature"></span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>name</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relationship name</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relationship type (belongsTo, hasMany, hasOne)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hasApi</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Determines if the relationship has api endpoints</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parentKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Field.html">Field</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relationship parent model key</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>foreignKey</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Field.html">Field</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The relationship foreign key</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>localModel</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The model that owns the relationship</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>model</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The related model</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inputs</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="Input.html">Input</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">All inputs of the relationship</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>hasManyDetails</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="HasManyDetail.html">HasManyDetail</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The related detail components (for Master-Detail)</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>inverse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="BasicRelationship.html">BasicRelationship</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The inverse relationship</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        </div>
+    
+
+    
+
+    
+
+    
+    
+    
+
+     
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        
+            
+
+    
+
+    <h4 class="name" id="belongsToModel"><span class="type-signature"></span>belongsToModel<span class="signature">(model)</span><span class="type-signature"> &rarr; {<a href="Entity.html">Entity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns if a model belongs to another
+</div>
+
+
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>model</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getApiRoutes"><span class="type-signature"></span>getApiRoutes<span class="signature">()</span><span class="type-signature"> &rarr; {array}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns the relationship api routes
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">array</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getControllerName"><span class="type-signature"></span>getControllerName<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns the controller name
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getDefaultForeignKeyName"><span class="type-signature"></span>getDefaultForeignKeyName<span class="signature">()</span><span class="type-signature"> &rarr; {string}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns the original foreign key name
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">string</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getDefaultKeysNames"><span class="type-signature"></span>getDefaultKeysNames<span class="signature">()</span><span class="type-signature"> &rarr; {object}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns primary key based on relationship keys
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">object</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getForeignModel"><span class="type-signature"></span>getForeignModel<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Entity.html">Entity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns the foreign model
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="getParentModel"><span class="type-signature"></span>getParentModel<span class="signature">()</span><span class="type-signature"> &rarr; {<a href="Entity.html">Entity</a>}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    Returns the parent model
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="Entity.html">Entity</a></span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="hasDifferentForeignKey"><span class="type-signature"></span>hasDifferentForeignKey<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship has a non-standard foreign key
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="hasDifferentForeignOrParentKey"><span class="type-signature"></span>hasDifferentForeignOrParentKey<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship has non-standard foreign or parent key
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="hasDifferentParentKey"><span class="type-signature"></span>hasDifferentParentKey<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship has parent key different from 'id'
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="isBelongsTo"><span class="type-signature"></span>isBelongsTo<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship is a belongsTo
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="isHasMany"><span class="type-signature"></span>isHasMany<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship is a hasMany
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+            
+
+    
+
+    <h4 class="name" id="isHasOne"><span class="type-signature"></span>isHasOne<span class="signature">()</span><span class="type-signature"> &rarr; {boolean}</span></h4>
+
+    
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+<div class="description usertext">
+    If the relationship is a hasOne
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h5>Returns:</h5>
+
+        
+
+
+<dl class="param-type">
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">boolean</span>
+
+
+    </dd>
+</dl>
+
+    
+
+
+
+        
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+    
+    
+</div>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="../github.com/jsdoc/jsdoc.html">JSDoc 3.6.7</a> on Thu Dec 16 2021 13:02:45 GMT-0300 (Horário Padrão de Brasília) using the <a href="../github.com/clenemt/docdash.html">docdash</a> theme.
+</footer>
+
+<script>prettyPrint();</script>
+<script src="scripts/polyfill.js"></script>
+<script src="scripts/linenumber.js"></script>
+
+
+
+</body>
+
+<!-- Mirrored from api-docs.vemto.app/BasicRelationship.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:17:11 GMT -->
+</html>

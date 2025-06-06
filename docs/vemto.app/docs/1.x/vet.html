@@ -1,0 +1,353 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/1.x/vet by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Vemto Template Engine | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="vet.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    1.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../0.x/vet.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="vet.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../1.html"
+            search-url="../search-index/1.html"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="plugins.html">Plugins</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Advanced</h2>
+<ul>
+<li><a href="edit_stubs.html">Editing Stubs/Templates</a></li>
+<li><a href="vet.html">Template Engine</a></li>
+<li><a href="creating_plugins.html">Creating Plugins</a></li>
+<li><a href="../../../api-docs.vemto.app/Vemto.html">API</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-vemto-template-engine"></a></p>
+<h1>Vemto Template Engine</h1>
+<hr />
+<p><br></p>
+<p><strong>Video tutorial coming soon...</strong></p>
+<p><br></p>
+<p>Vemto Template Engine (VET) is a template engine made for <strong>code and text generation</strong>. It can be used for any dynamic text generation and accepts all Javascript syntaxes inside special tags. VET files have the <strong>.vemtl</strong> extension.</p>
+<p><br></p>
+<p>Vemto uses this template engine for all code generation tasks and learning how to use it allows you to edit the existing templates and creating plugins that could generate custom code files.</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136099517-3975fc31-b911-4f4b-9b0a-b96b71f04039.png" alt="image" /></p>
+<p><br></p>
+<p>To play with it, you can use the <a href="edit_stubs.html">Templates Editor</a> in the <a href="edit_stubs.html">PlaygroundMode</a>. The data defined on the Data Editor is automatically injected into the template and is accessible through the <strong>&quot;this&quot;</strong> identifier. This process is called <strong>VET Data-Injection</strong>.</p>
+<p><br/></p>
+<ul>
+<li><a href="vet.html#-vemto-template-engine"># Vemto Template Engine</a></li>
+<li><a href="vet.html#introduction">Introduction</a></li>
+<li><a href="vet.html#tags">Tags</a></li>
+<li><a href="vet.html#internal-variables">Internal Variables</a></li>
+<li><a href="vet.html#modes">Modes</a>
+<ul>
+<li><a href="vet.html#indent-back-mode">Indent-Back Mode</a></li>
+</ul></li>
+<li><a href="vet.html#syntax-highlighter">Syntax Highlighter</a></li>
+</ul>
+<p><a name="introduction"></a></p>
+<h2>Introduction</h2>
+<p>Let's consider we have this data:</p>
+<pre><code class="language-Json">{
+    "name": "Tiago Silva Pereira Rodrigues",
+    "projects": [
+        "VET", "Rapid Mockup", "Vemto"
+    ]
+}</code></pre>
+<p>And we have this text template:</p>
+<pre><code class="language-text">Hi, I'm &lt;$ this.name $&gt;.
+
+I created these projects:
+
+&lt;# It is a comment #&gt;
+&lt;% for (let project of this.projects) { %&gt;
+    - &lt;$ project $&gt;
+&lt;% } %&gt;</code></pre>
+<p><br></p>
+<p>As you can see, we can attach the <em>data</em> to the template scope and can access it using <em>this</em>. Any javascript command is accepted inside <strong>&lt;% %&gt;</strong> tags.</p>
+<p><br></p>
+<p>Then, after compiling the template, the <strong>result</strong> will be:</p>
+<pre><code class="language-text">Hi, I'm Tiago Silva Pereira Rodrigues.
+
+I created these projects:
+
+    - VET
+    - Rapid Mockup
+    - Vemto</code></pre>
+<blockquote>
+<p>{info} You can copy and paste the template above to the Templates Editor in the Playground Mode to play with it and see it being compiled in realtime</p>
+</blockquote>
+<p><a name="tags"></a></p>
+<h2>Tags</h2>
+<p>At this moment, VET has six different tags that can be used. All the text outside these tags will be generated without modifications, keeping the indentation and break lines.</p>
+<p>The most commonly used tags are:</p>
+<ul>
+<li><code>&lt;# #&gt;</code> - Used for line comments. Everything inside these tags is removed from the resulting code</li>
+<li><code>&lt;$ $&gt;</code> - Used to show variables or expression values. Commands and variables inside these tags will be executed and the result will be transformed into text</li>
+<li><code>&lt;% %&gt;</code> - Used for javascript logic blocks like <strong>if</strong>, <strong>for</strong>, etc. Commands and variables inside these tags will not be transformed to text. Accepts all javascript syntax, including creating variables during the template execution. You can use these tags to control the logic and the flux of your generated text/code</li>
+</ul>
+<p>And here are some less used tags:</p>
+<ul>
+<li><code>&lt;* *&gt;</code> - Used to enable/disable modes (for example, to enable the <a href="vet.html#indent-back-mode">indent-back</a> mode)</li>
+<li><code>&lt;up up&gt;</code> - It is like <em>&lt;$ $&gt;</em>, but will put the result on the previous line (only if the tags are at the start of a new line)</li>
+<li><code>&lt;import template="imported.vemtl"&gt;</code> - Used to import other templates (it is necessary to declare all imported templates before compiling a file)</li>
+</ul>
+<p>Examples:</p>
+<pre><code class="language-text">&lt;# It is a comment and will not be transformed to text #&gt;
+&lt;# Showing a value - will convert to something #&gt;
+&lt;# like "Tiago Rodrigues" #&gt;
+&lt;$ this.name $&gt;
+
+---------------
+
+&lt;# Showing an expression return - will convert to  #&gt;
+&lt;# something like "id", etc #&gt;
+&lt;$ this.model.getPrimaryKeyName() $&gt;
+
+---------------
+
+&lt;# The second sentence will be generated #&gt;
+&lt;# on the previous line - will result in something like #&gt;
+&lt;# "Tiago Rodrigues - Tiago Rodrigues" #&gt;
+&lt;$ this.name $&gt; - 
+&lt;up if(true) { up&gt;
+&lt;$ this.name $&gt;
+&lt;up } up&gt;
+
+---------------
+
+&lt;# If this.data is equal true #&gt;
+&lt;% if(this.canSayHello) { %&gt;
+Hello World!!
+&lt;% } %&gt;</code></pre>
+<p><br></p>
+<p>Here you can see the execution result for the code above:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136100678-c3a572e6-4ae1-4ac5-b3fa-ff34a66e9cc3.png" alt="image" /></p>
+<p><br></p>
+<p>Please notice that to execute the code, we predefined the data on the <em>Data Editor</em> from the <em>Templates Editor</em>:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136102261-51d51c53-12db-40f0-976f-2d67c678024d.png" alt="image" /></p>
+<p><a name="internal-variables"></a></p>
+<h2>Internal Variables</h2>
+<p>In addition to using the data injected into the template through the VET Data-Injection mechanism, you can also define internal variables.</p>
+<p><br></p>
+<p>This is very useful, for example, to make the code cleaner. It is possible to create variables at any time, through the logic tags: <strong>&lt;% %&gt;</strong></p>
+<p><br></p>
+<p>Some examples:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136414054-a850bc68-29da-4985-b2e8-54685fe0031d.png" alt="image" /></p>
+<p><a name="modes"></a></p>
+<h2>Modes</h2>
+<p>Modes can be enabled/disabled using the <code>&lt;*  *&gt;</code> tags. They are used to modify the VET behavior when generating the code.</p>
+<p><br></p>
+<p>The following modes are available:</p>
+<p><a name="indent-back-mode"></a></p>
+<h3>Indent-Back Mode</h3>
+<p>This mode is used to remove indentation from logic blocks (like <code>&lt;% %&gt;</code>). When this mode is enabled, the text of <code>&lt;$ $&gt;</code> tag result will always be sent to the same position of the highest logic block that it inherits.</p>
+<blockquote>
+<p>{warning} You can notice that the <strong>indent-back</strong> mode is rarely used in the Vemto templates. It happens because generally Vemto formats the code using a specific Formatter (for example, PHP Formatter, Blade Formatter, etc). So it is not necessary to enable the indent-back mode (it would just waste processing). So, if you are using Vemto Formatters on your plugins, just ignore it</p>
+</blockquote>
+<p>By default, VET will always keep the initial spaces of each line untouched. For example: </p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136105026-6ae82f1d-3f57-44ac-8e06-f98157697df3.png" alt="image" /></p>
+<p><br></p>
+<p>As you can see, the indentation was included in the generated code. To avoid this behavior, you can enable the indent-back mode:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136105301-265ebd3a-db20-4833-8182-55a4eacb75f4.png" alt="image" /></p>
+<p><br></p>
+<p>The indent-back mode will always respect the text indentation. It only removes the logic indentation:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136106212-2dc26447-260e-43bd-97b8-6a2d3e68f0ef.png" alt="image" /></p>
+<p><br></p>
+<p>Without the indent-back mode, the only way to get the same result is to don't use indentation on logic blocks, but this impairs the readability of the VET code in some cases (so please use this technique carefully):</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136106498-141a0bfb-49f9-4e58-aa43-76265447bbe3.png" alt="image" /></p>
+<p><br></p>
+<p>To disable the indent-back mode, you can use the tag: <code>&lt;* end:indent-back *&gt;</code>. If you are using the mode in your entire VET code, it is not necessary to disable it.</p>
+<p><a name="syntax-highlighter"></a></p>
+<h2>Syntax Highlighter</h2>
+<p>We have a simple VET Syntax Highlighter for VSCode <a href="../../../github.com/TiagoSilvaPereira/vemto-template-engine-syntax-vscode.html">here</a>.</p>
+<p><br></p>
+<p>The syntax highlighter will work on files with <strong>.vemtl</strong> extension.</p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/1.x/vet by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:54 GMT -->
+</html>

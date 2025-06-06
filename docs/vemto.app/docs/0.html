@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:58:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Vemto Documentation | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="1.x/overview.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="0.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="1.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="0.x/overview.html">Overview</a></li>
+<li><a href="https://vemto.app/docs/0.x/installation">Installation</a></li>
+<li><a href="https://vemto.app/docs/0.x/configuration">Configuration</a></li>
+<li><a href="https://vemto.app/docs/0.x/upgrade">Upgrade</a></li>
+<li><a href="https://vemto.app/docs/0.x/reporting">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="https://vemto.app/docs/0.x/projects">Projects</a></li>
+<li><a href="https://vemto.app/docs/0.x/models">Models and Tables</a></li>
+<li><a href="https://vemto.app/docs/0.x/fields">Fields and Foreigns</a></li>
+<li><a href="https://vemto.app/docs/0.x/relationships">Relationships</a></li>
+<li><a href="https://vemto.app/docs/0.x/cruds">Cruds</a></li>
+<li><a href="https://vemto.app/docs/0.x/master_detail">Master Detail</a></li>
+<li><a href="https://vemto.app/docs/0.x/generate">Generating Code</a></li>
+<li><a href="https://vemto.app/docs/0.x/migrations">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="https://vemto.app/docs/0.x/common_issues">Common Issues</a></li>
+<li><a href="https://vemto.app/docs/0.x/backup">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-vemto-documentation"></a></p>
+<h1>Vemto Documentation</h1>
+<hr />
+<p>Vemto is a complete <a href="../../laravel.com/index.html">Laravel</a> code generator and studio.</p>
+<p><br/></p>
+<p><img src="../../user-images.githubusercontent.com/11933789/102258506-c39d4500-3eec-11eb-9e09-6e560c94024e.gif" alt="Vemto usage example gif" /></p>
+<ul>
+<li><a href="0.html#-vemto-documentation"># Vemto Documentation</a></li>
+<li><a href="0.html#features">Features</a></li>
+<li><a href="0.html#supported-laravel-versions">Supported Laravel Versions</a></li>
+</ul>
+<p><a name="features"></a></p>
+<h2>Features</h2>
+<p>Vemto brings plenty of smart features to help you start your next project, and generates the code for:</p>
+<ul>
+<li>Models, Migrations, Policies, Factories, and Seeders</li>
+<li>Controllers and Form Requests</li>
+<li>CRUD applications, Permissions, and Translations</li>
+<li>Tests</li>
+<li>And much more coming soon... <a href="../../trello.com/b/0MTU9Vyq/vemto-roadmap.html">(See our Roadmap)</a></li>
+</ul>
+<blockquote>
+<p>{info} The <a href="../../trello.com/b/0MTU9Vyq/vemto-roadmap.html">roadmap</a> is continuously updated and the features disposition can be changed if necessary.</p>
+</blockquote>
+<p><a name="supported-laravel-versions"></a></p>
+<h2>Supported Laravel Versions</h2>
+<p>Vemto currently generates code for <em>Laravel 7 or greater</em>. It is not possible to generate Laravel &lt; 7 projects, but as the majority of the code isn't different between Laravel versions, you can easily reuse the generated code to do it manually.</p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:58:23 GMT -->
+</html>

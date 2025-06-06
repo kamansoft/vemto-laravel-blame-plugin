@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x/models by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:11:55 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Models and Tables | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="../1.x/models.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="models.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../1.x/models.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-models"></a></p>
+<h1>Models and Tables</h1>
+<hr />
+<p>You can add <em>Models and Tables</em> on the <strong>Schema Editor</strong>. Each <em>Schema Entity</em> supports the majority of <a href="../../../laravel.com/docs/8.x/migrations.html">Laravel Migrations</a> field types. Model entities also support adding <a href="relationships.html">relationships</a>. </p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102497531-81dcdd80-4057-11eb-95b6-0a20d43e5ec1.png" alt="Schema" /></p>
+<ul>
+<li><a href="models.html#-models-and-tables"># Models and Tables</a></li>
+<li><a href="models.html#creating">Creating</a></li>
+<li><a href="models.html#updating">Updating</a></li>
+<li><a href="models.html#pivot-tables">Pivot Tables</a></li>
+</ul>
+<p><a name="creating"></a></p>
+<h2>Creating</h2>
+<p>To create a new entity, you can click on the <strong>Add Entity</strong> button on the <strong>Schema Editor</strong>. Then, on the <strong>Add Entity</strong> modal, fill all the obligatory fields. </p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102497706-bc467a80-4057-11eb-8aa5-2fe3a76cfb47.png" alt="image" /> </p>
+<p><br/></p>
+<p>If you choose to add a Model entity, <em>Vemto</em> will suggest the <em>Model Collection</em> name and the <em>Model Table</em> name using the following rules:</p>
+<ul>
+<li><strong>Collection</strong> - The collection name, by default, is the English plural of the Model name. For example, for a model named <em>&quot;User&quot;</em>, the collection will be <em>&quot;Users&quot;</em> by default</li>
+<li><strong>Table</strong> - The table name, by default, is the English plural of the Model name, in lower case. For example, for a model named <em>&quot;User&quot;</em>, the table will be <em>&quot;users&quot;</em> by default</li>
+</ul>
+<blockquote>
+<p>{warning} It is highly recommended to follow the <a href="../../../laravel.com/docs/8.x/eloquent.html#eloquent-model-conventions">Eloquent Model Conventions</a> when creating models and tables</p>
+</blockquote>
+<p><br/></p>
+<p>However, you can change the Collection and Table names if necessary (for example, if you are not creating a Model with an English name).</p>
+<blockquote>
+<p>{warning} It is recommended to always use English when creating your models, fields, and relationships. If you choose to create a model that doesn't have an English name, be sure to enable the <strong>Inline Routes</strong> mode on <a href="projects.html#general-settings">Project Settings</a>, or manually edit the <em>routes resources</em>, as you can see here on <a href="../../../laravel.com/docs/8.x/controllers.html#restful-localizing-resource-uris">Laravel Documentation</a>.</p>
+</blockquote>
+<p>The default <em>Vemto</em> nomenclature for Models follows all Laravel nomenclature standards. Vemto also detects when you are using non-standard nomenclature and correctly generates the code with the recommended <em>Laravel</em> practices for these cases (except for the routes, that need to be changed to <em>Inline mode</em>).</p>
+<p><a name="updating"></a></p>
+<h2>Updating</h2>
+<p>To update an entity, just fire a <em>&quot;fast click&quot;</em> on it to open the <em>Entity Options</em> panel (you can use a &quot;click + drag&quot; to move the Entity through the Schema Editor area)</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102497754-ccf6f080-4057-11eb-882e-36b42afa7d3f.png" alt="image" /></p>
+<p>To see how to add fields to the Model or Table, please check the <a href="fields.html">Fields documentation</a>.</p>
+<p><a name="pivot-tables"></a></p>
+<h2>Pivot Tables</h2>
+<p>Please check the <a href="relationships.html#pivot-table">Relationships Instructions for Pivot Tables</a></p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x/models by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:11:55 GMT -->
+</html>

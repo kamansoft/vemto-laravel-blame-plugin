@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/1.x/plugins by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:23 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Plugins | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="plugins.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    1.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../0.x/plugins.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="plugins.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../1.html"
+            search-url="../search-index/1.html"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="plugins.html">Plugins</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Advanced</h2>
+<ul>
+<li><a href="edit_stubs.html">Editing Stubs/Templates</a></li>
+<li><a href="vet.html">Template Engine</a></li>
+<li><a href="creating_plugins.html">Creating Plugins</a></li>
+<li><a href="../../../api-docs.vemto.app/Vemto.html">API</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-plugins"></a></p>
+<h1>Plugins</h1>
+<hr />
+<p><br></p>
+<p>Plugins are a way to extend Vemto functionality. They can be used to perform numerous activities such as:</p>
+<p><br></p>
+<p><strong>A)</strong> Add a new CSS theme (example: AdminLTE plugin)<br>
+<strong>B)</strong> Modify code generation (example: Multi-Tenancy plugin)<br>
+<strong>C)</strong> Modify templates (you can modify a template in the Templates Editor, and then put it in a plugin to use in all your projects)<br>
+<strong>D)</strong> Generate files that Vemto does not generate by default (example: generate a Postman collection, generate Laravel NOVA files, etc.)<br>
+<strong>E)</strong> Execute specific commands before or after code generation<br></p>
+<p><br/></p>
+<p>If you want to <strong>create your plugins</strong>, please refer to <a href="creating_plugins.html">this page</a>.</p>
+<ul>
+<li><a href="plugins.html#-plugins"># Plugins</a></li>
+<li><a href="plugins.html#installing">Installing</a></li>
+<li><a href="plugins.html#security">Security</a></li>
+</ul>
+<p><a name="installing"></a></p>
+<h2>Installing</h2>
+<p>Vemto plugins are distributed in .zip format. You can find the plugin you want to install by going to the &quot;Marketplace&quot; tab.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136402498-33971cb1-060b-41d0-8c28-c064d446ba8e.png" alt="image" /></p>
+<p>After that, download and save it in your favorite folder. To make the plugin available for Vemto, click on the &quot;Load Plugin&quot; button in the upper area of the screen and select the .zip file you downloaded.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136402993-917beb93-9a7e-44e8-b8cd-68429822e013.png" alt="image" /></p>
+<p><br/></p>
+<p>After that, the plugin will appear in the &quot;Available&quot; tab and you can install it with a simple click.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136403170-3793618e-047e-4253-b0b6-694cf8547e65.png" alt="image" /></p>
+<p><a name="security"></a></p>
+<h2>Security</h2>
+<p>Although you can install plugins from any source, we recommend caution. Always prefer Marketplace plugins or plugins from a trusted and known source.</p>
+<blockquote>
+<p>{warning} When a plugin is not listed in the marketplace, Vemto will ask you if you want to install it.</p>
+</blockquote>
+<p>Always be careful and if you find something suspicious in any plugin, please don't be late to let us know.</p>
+<p><br/></p>
+<p>Contact us at <a href="contact%40vemto.html"><span class="__cf_email__" data-cfemail="caa9a5a4beaba9be8abcafa7bea5e4abbaba">[email&#160;protected]</span></a></p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/1.x/plugins by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:28 GMT -->
+</html>

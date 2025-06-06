@@ -1,0 +1,765 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/1.x/creating_plugins by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:54 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Creating Plugins | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="creating_plugins.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    1.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../0.x/creating_plugins.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="creating_plugins.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../1.html"
+            search-url="../search-index/1.html"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="plugins.html">Plugins</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Advanced</h2>
+<ul>
+<li><a href="edit_stubs.html">Editing Stubs/Templates</a></li>
+<li><a href="vet.html">Template Engine</a></li>
+<li><a href="creating_plugins.html">Creating Plugins</a></li>
+<li><a href="../../../api-docs.vemto.app/Vemto.html">API</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-creating-plugins"></a></p>
+<h1>Creating Plugins</h1>
+<hr />
+<p><br></p>
+<p><strong>Video tutorial coming soon...</strong></p>
+<p><br></p>
+<p>Plugins are a way to extend Vemto functionality. They can be used to perform numerous activities such as:</p>
+<p><br></p>
+<p><strong>A)</strong> Add a new CSS theme (example: AdminLTE plugin)<br>
+<strong>B)</strong> Modify code generation (example: Multi-Tenancy plugin)<br>
+<strong>C)</strong> Modify templates (you can modify a template in the Templates Editor, and then put it in a plugin to use in all your projects)<br>
+<strong>D)</strong> Generate files that Vemto does not generate by default (eg generate a Postman collection, generate Laravel NOVA files, etc.)<br>
+<strong>E)</strong> Execute specific commands before or after code generation<br></p>
+<p>What limits what plugins can do is creativity. </p>
+<p><br></p>
+<p>You can see some plugins code examples on the following links:</p>
+<p><strong>1)</strong> <a href="../../../github.com/TiagoSilvaPereira/vemto-simple-multitenancy-plugin.html">https://github.com/TiagoSilvaPereira/vemto-simple-multitenancy-plugin</a><br>
+<strong>2)</strong> <a href="../../../github.com/TiagoSilvaPereira/vemto-admin-lte-plugin.html">https://github.com/TiagoSilvaPereira/vemto-admin-lte-plugin</a><br>
+<strong>3)</strong> <a href="../../../github.com/TiagoSilvaPereira/vemto-commands-plugin.html">https://github.com/TiagoSilvaPereira/vemto-commands-plugin</a><br>
+<strong>4)</strong> <a href="../../../github.com/TiagoSilvaPereira/vemto-multi-tenancy-plugin.html">https://github.com/TiagoSilvaPereira/vemto-multi-tenancy-plugin</a><br></p>
+<p><br></p>
+<ul>
+<li><a href="creating_plugins.html#-creating-plugins"># Creating Plugins</a></li>
+<li><a href="creating_plugins.html#considerations">Considerations</a></li>
+<li><a href="creating_plugins.html#requirements">Requirements</a></li>
+<li><a href="creating_plugins.html#downloading-the-base">Downloading the base</a></li>
+<li><a href="creating_plugins.html#git-repository">Git Repository</a></li>
+<li><a href="creating_plugins.html#readmemd">README.md</a></li>
+<li><a href="creating_plugins.html#configuration">Configuration</a></li>
+<li><a href="creating_plugins.html#the-mainjs-file">The main.js file</a>
+<ul>
+<li><a href="creating_plugins.html#caninstall">canInstall</a></li>
+<li><a href="creating_plugins.html#oninstall">onInstall</a></li>
+<li><a href="creating_plugins.html#composerpackages">composerPackages</a></li>
+<li><a href="creating_plugins.html#nodepackages">nodePackages</a></li>
+<li><a href="creating_plugins.html#beforecodegenerationstart">beforeCodeGenerationStart</a></li>
+<li><a href="creating_plugins.html#aftercodegenerationstart">afterCodeGenerationStart</a></li>
+<li><a href="creating_plugins.html#beforerendertemplatename">beforeRender{TemplateName}</a></li>
+<li><a href="creating_plugins.html#templatereplacements">templateReplacements</a></li>
+<li><a href="creating_plugins.html#copyablefiles">copyableFiles</a></li>
+<li><a href="creating_plugins.html#beforecodegenerationend">beforeCodeGenerationEnd</a></li>
+<li><a href="creating_plugins.html#aftercodegenerationend">afterCodeGenerationEnd</a></li>
+<li><a href="creating_plugins.html#addentitymarkers">addEntityMarkers</a></li>
+<li><a href="creating_plugins.html#beforerunnerstart">beforeRunnerStart</a></li>
+<li><a href="creating_plugins.html#beforerunnerend">beforeRunnerEnd</a></li>
+</ul></li>
+<li><a href="creating_plugins.html#the-vue-component">The Vue component</a>
+<ul>
+<li><a href="creating_plugins.html#tailwindcss">TailwindCSS</a></li>
+<li><a href="creating_plugins.html#vemto-api">Vemto API</a></li>
+<li><a href="creating_plugins.html#building-the-component">Building the component</a></li>
+<li><a href="creating_plugins.html#vue-component-debug">Vue component debug</a></li>
+</ul></li>
+<li><a href="creating_plugins.html#publish-on-the-marketplace">Publish on the Marketplace</a></li>
+</ul>
+<p><a name="considerations"></a></p>
+<h2>Considerations</h2>
+<p>There are some important considerations for you to know before you start creating plugins:</p>
+<p><br></p>
+<ul>
+<li>The <a href="edit_stubs.html#considerations">Considerations from the Templates Editor</a> are valid for plugins too</li>
+<li>Whenever you replace a standard Vemto template via a plugin or render a plugin's template, you can access the plugin's saved data using <code>this.pluginData</code> in the template's <a href="vet.html">VET</a> code</li>
+<li>Files can only be generated in project-relative paths. Cannot write files outside the project</li>
+<li>When you generate a file on a Laravel project from a plugin, if you uninstall the plugin, the file will be removed in the next code generation</li>
+<li>Likewise, commands can only be executed within the project directory</li>
+<li>Even if you are working on Windows, always use &quot;/&quot; to separate directories, never &quot;\&quot;. Using the second option will cause errors in using the plugin. Vemto always considers &quot;/&quot; as the correct slash for internal plugin operations.</li>
+<li>You can install node.js packages in your plugins. For example, if you want to show a chart in your plugin's Vue component, you can install chart.js or something similar and use it (however this should be done with care, and maliciously crafted plugins will be blocked)</li>
+<li>With big powers come big responsibilities. We are not responsible if you enter potentially dangerous commands into your plugin</li>
+<li>Avoid installing third-party plugins that are not on the Marketplace, unless you know the origin</li>
+<li>We reserve the right to block plugins from being installed if they contain malicious code or inappropriate content</li>
+</ul>
+<p><a name="requirements"></a></p>
+<h2>Requirements</h2>
+<p>Before starting to create your Vemto plugin, please be sure to install:</p>
+<p><br></p>
+<ul>
+<li>GIT - <a href="../../../git-scm.com/index.html">https://git-scm.com/</a></li>
+<li>Node.js - <a href="../../../nodejs.org/en/index.html">https://nodejs.org/en/</a></li>
+<li>Vue CLI - <a href="../../../cli.vuejs.org/index.html">https://cli.vuejs.org/</a> (it is necessary to compile the Vue plugin component)</li>
+</ul>
+<p><a name="cloning-repository"></a></p>
+<h2>Downloading the base</h2>
+<p>The first step is downloading the <strong>Plugin Base</strong> from the Vemto Marketplace:</p>
+<p><br></p>
+<p>After that, extract the ZIP file to the <code>/plugins</code> folder, inside the <em>Vemto data path</em>, and rename the extracted folder to match your plugin name (see the plugin names convention right below). </p>
+<p><br></p>
+<p>By default, you can find this folder under the following directories:</p>
+<p><br></p>
+<ul>
+<li><strong>on Linux:</strong> ~/.config/vemto/plugins</li>
+<li><strong>on macOS:</strong> ~/Library/Application Support/vemto/plugins</li>
+<li><strong>on Windows:</strong> %USERPROFILE%\AppData\Roaming\vemto\plugins</li>
+</ul>
+<p><br></p>
+<p>If the <code>/plugins</code> path does not exist, you can create it manually (it means you never installed a plugin on Vemto before).</p>
+<p><br></p>
+<p>This extracted folder would be your plugin folder, and now you can start modifying it to have the wanted behavior.</p>
+<p><a name="git-repository"></a></p>
+<h2>Git Repository</h2>
+<p>If you want to publish your plugin in the future on Vemto Marketplace, you need to create a GitHub repository. We recommend naming your repository with the following pattern:</p>
+<p><br></p>
+<pre><code class="language-text">vemto-[PLUGIN-NAME-HERE]-plugin</code></pre>
+<p><br></p>
+<p>For example:</p>
+<p><br></p>
+<pre><code class="language-text">- vemto-adminlte-plugin
+- vemto-laravel-nova-plugin</code></pre>
+<p><br></p>
+<p>Each plugin version must have a separate branch. For example, version 1.0.0 is in the 1.0.0 branch (Vemto will use the branch name to download the file via the marketplace). Versioning must be done using the <a href="../../../semver.org/index.html">SEMVER pattern</a>, with three digits separated by dots.</p>
+<p><br></p>
+<p>It is also recommended to always keep the latest plugin version as the <a href="../../../docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch.html">default branch on GitHub</a>.</p>
+<p><a name="readmemd"></a></p>
+<h2>README.md</h2>
+<p>The README.md file is very important, as it will show the instructions on how to use your plugin, and it will be shown on the Vemto marketplace.</p>
+<p><br></p>
+<p>You can see some examples here:</p>
+<p><br></p>
+<ul>
+<li><a href="../../../github.com/TiagoSilvaPereira/vemto-simple-multitenancy-plugin/blob/main/README.html">https://github.com/TiagoSilvaPereira/vemto-simple-multitenancy-plugin/blob/main/README.md</a></li>
+<li><a href="../../../github.com/TiagoSilvaPereira/vemto-admin-lte-plugin/blob/main/README.html">https://github.com/TiagoSilvaPereira/vemto-admin-lte-plugin/blob/main/README.md</a></li>
+</ul>
+<p><a name="configuration"></a></p>
+<h2>Configuration</h2>
+<p>Now, let's configure the package.json file to reflect the plugin data. It's a very simple and intuitive file, and it's a standard Node.js module file. Only a few settings are specific to Vemto, such as <em>title, minVemtoVersion, and image</em>.</p>
+<p><br></p>
+<p>A very important piece of data is the plugin id, especially when distributing it on the marketplace. The recommended pattern for creating it is to use its domain or inverted name at first, and then the plugin name. Some examples:</p>
+<p><br></p>
+<pre><code class="language-text">app.vemto.plugin-base // vemto.app
+rodrigues.tiago.multitenancy // Tiago Rodrigues
+app.vemto.adminlte // vemto.app</code></pre>
+<p><br></p>
+<p>Another important data is <strong>minVemtoVersion</strong>, which defines the minimum Vemto version for plugin installation. This is very useful for creating plugins that use newer <a href="../../../api-docs.vemto.app/Vemto.html">API</a> methods, preventing them from being installed in versions that cannot execute them.</p>
+<p><br></p>
+<p>Here you can see the complete package.json file for a new plugin (the image field can be kept null for now, it is not used in Vemto yet, but it will be in the future).</p>
+<p><br></p>
+<pre><code class="language-json">{
+    "version": "1.0.0",
+    "id": "app.vemto.plugin-base",
+    "name": "plugin-base",
+    "title": "Plugin Base",
+    "description": "A base for creating Vemto plugins",
+    "image": "",
+    "main": "src/main.js",
+    "vueComponent": "dist/plugin-base.umd.min.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TiagoSilvaPereira/vemto-plugin-base"
+    },
+    "minVemtoVersion": "1.0.0"
+}</code></pre>
+<p><br></p>
+<p>There are two other very important items on the package.json file:</p>
+<p><br></p>
+<pre><code class="language-json">"main": "src/main.js",
+"vueComponent": "dist/plugin-base.umd.min.js",</code></pre>
+<p><br></p>
+<p>Both will be better explained in the section below.</p>
+<blockquote>
+<p>{danger} Plugins are, in essence, node.js packages and therefore support installing third-party modules usually with npm install or yarn install. However, be careful when choosing packages if you want to distribute your plugin on the Marketplace, as problematic and/or malicious packages will not be accepted.</p>
+</blockquote>
+<p><a name="the-mainjs-file"></a></p>
+<h2>The main.js file</h2>
+<p>The <strong>src/main.js</strong> file is responsible for controlling what the plugin will do at certain times during its execution. Each of these moments is called a Hook, and they correspond to methods that can be called inside main.js.</p>
+<p><br></p>
+<p>As you can see, this file always receives an instance of the <a href="../../../api-docs.vemto.app/Vemto.html">Vemto API</a>, which will be used later, inside the Hooks, to interact with Vemto:</p>
+<p><br></p>
+<pre><code class="language-js">module.exports = (vemto) =&gt; {
+// ...</code></pre>
+<p><br></p>
+<p>Most of the time, your plugin will use this file a lot, in conjunction with the Vue component explained in the next section. But in some types of plugins, where you will only read the project data and present it visually using the Vue component (for example, a plugin that shows the number of models, cruds, and files of a project in the same location), this file does not will be used a lot. In this case, you can keep it in its simplest version, just checking the installation authorization using the <strong>canInstall Hook</strong>:</p>
+<p><br></p>
+<pre><code class="language-js">module.exports = (vemto) =&gt; {
+
+    return {
+
+        canInstall() {
+            return true
+        },
+
+    }
+
+}</code></pre>
+<p><br></p>
+<p>You can declare all Hooks you need to use inside your plugin main.js file like below:</p>
+<p><br></p>
+<pre><code class="language-js">module.exports = (vemto) =&gt; {
+
+    return {
+
+        canInstall() {
+            // ...
+        },
+
+        onInstall() {
+            // ...
+        },
+
+        beforeCodeGenerationStart() {
+            // ...
+        },
+
+        // Etc...
+
+    }
+
+}</code></pre>
+<blockquote>
+<p>{info} After changing the main.js file, it may be necessary to perform a &quot;Reload&quot; of the plugin in Vemto so that the cache is cleared and the changes take effect.</p>
+</blockquote>
+<p>Now let's get to know the Hooks available for use within main.js:</p>
+<p><a name="caninstall"></a></p>
+<h3>canInstall</h3>
+<p>Defines if the plugin can be installed. When a specific condition is not met, it should return false and use the <a href="../../../api-docs.vemto.app/Vemto.html"><strong>addBlockReason API method</strong></a> to display a message on the lock screen. If your plugin doesn't have installation conditions, just return true. Example:</p>
+<p><br></p>
+<pre><code class="language-js">canInstall() {
+    let projectSettings = vemto.getProjectSettings()
+
+    if(projectSettings.cssFramework !== 'bootstrap') {
+        vemto.addBlockReason('This plugin is only compatible with Bootstrap projects')
+        return false
+    }
+
+    if(projectSettings.uiTemplate !== 'laravel_ui') {
+        vemto.addBlockReason('This plugin is only compatible with Laravel UI templates')
+        return false
+    }
+
+    return true
+}</code></pre>
+<p><a name="oninstall"></a></p>
+<h3>onInstall</h3>
+<p>Run something as soon as the plugin is installed. It is usually used to save the initial plugin data in the project (this data will be available for all plugin Hooks and in the Vue component using the <a href="../../../api-docs.vemto.app/Vemto.html"><strong>getPluginData API method</strong></a>). Example:</p>
+<p><br></p>
+<pre><code class="language-js">onInstall() {
+    vemto.savePluginData({
+        sidebarMode: 'dark',
+        sidebarCollapsed: true,
+    })
+},</code></pre>
+<p><a name="composerpackages"></a></p>
+<h3>composerPackages</h3>
+<p>Allows to edit the <strong>composer.json</strong> file as a Javascript Object. It is util to install/uninstall composer packages during the code generation. Example:</p>
+<p><br></p>
+<pre><code class="language-js">composerPackages(packages) {
+    // Adding packages
+    packages.requireDev['phpunit/phpunit'] = '^9.5'
+    packages.require['spatie/laravel-multitenancy'] = '^1.0'
+
+    // Removing packages
+    delete packages.require['spatie/laravel-multitenancy']
+
+    return packages
+},</code></pre>
+<blockquote>
+<p>{info} This method was added on Vemto 1.0.1</p>
+</blockquote>
+<p><a name="nodepackages"></a></p>
+<h3>nodePackages</h3>
+<p>Allows to edit the <strong>packages.json</strong> file as a Javascript Object. It is util to install/uninstall Node packages during the code generation. Example:</p>
+<p><br></p>
+<pre><code class="language-js">nodePackages(packages) {
+
+    // Adding packages
+    packages.dependencies['moment'] = '^2.0'
+    packages.devDependencies['bootstrap'] = '^4.0.0'
+
+    // Removing packages
+    delete packages.devDependencies['bootstrap']
+
+    return packages
+},</code></pre>
+<blockquote>
+<p>{info} This method was added on Vemto 1.0.1</p>
+</blockquote>
+<p><a name="beforecodegenerationstart"></a></p>
+<h3>beforeCodeGenerationStart</h3>
+<p>Executes something just before code generation starts (for example a command, or the writing of some important file, or even a message in the log). Some Examples:</p>
+<p><br></p>
+<pre><code class="language-js">beforeCodeGenerationStart() {
+    vemto.log.info('Starting code generation...')
+},</code></pre>
+<pre><code class="language-js">// Checking if there is an irregular tenancy model and aborting the code generation
+beforeCodeGenerationStart() {
+    let data = vemto.getPluginData(),
+        models = vemto.getProjectModels()
+
+    models.forEach(model =&gt; {
+        if(this.isModelOwnedByTenant(model) &amp;&amp; !model.hasFieldByName(data.tenantFieldName)) {
+            vemto.log.error(`[TENANCY ERROR] Model ${model.name} does not have a field ${data.tenantFieldName}`)
+            vemto.generator.abort()
+        }
+    })
+},</code></pre>
+<p><a name="aftercodegenerationstart"></a></p>
+<h3>afterCodeGenerationStart</h3>
+<p>Works basically the same way as beforeCodeGenerationStart, but it runs right after code generation starts. Example:</p>
+<p><br></p>
+<pre><code class="language-js">afterCodeGenerationStart() {
+    vemto.log.info('Code generation already started...')
+},</code></pre>
+<p><a name="beforerendertemplatename"></a></p>
+<h3>beforeRender{TemplateName}</h3>
+<p>This is a very important Hook, as it allows you to manipulate the code generation of a template right before it is rendered and turned into a file.</p>
+<p><br></p>
+<p>It runs for all templates, and always follows the pattern beforeRender{TemplateName}. For example:</p>
+<p><br></p>
+<pre><code class="language-text">beforeRenderModel
+beforeRenderController
+beforeRenderAuthServiceProvider
+beforeRenderIndexView</code></pre>
+<p><br></p>
+<p>If you have doubts about the name of the method for a certain template, you can view it from the Template Editor, as shown in the image below:</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136448240-97f1c656-5b99-447d-810c-262f1eabc459.png" alt="image" /></p>
+<p><br></p>
+<p>This Hook always receives two parameters:</p>
+<p><br></p>
+<ul>
+<li><strong>template</strong> - An instance of Template (you can get the data injected into the <a href="vet.html">VET</a> template using the template.getData() method)</li>
+<li><strong>content</strong> - The compiled template content, which you can manipulate before rendering</li>
+</ul>
+<blockquote>
+<p>{info} In case you are confused about the difference between compiled and rendered templates... we call compiled the template that has already gone through the <a href="vet.html">VET</a>, and rendered, the one that already has the final content to be transformed into a file</p>
+</blockquote>
+<p>Let's illustrate the use. Assuming you want to add a PHP class to all controllers generated by Vemto, you could do something like:</p>
+<pre><code class="language-js">beforeRenderController(template, content) {
+    let phpFile = vemto.parsePhp(content)
+
+    phpFile.addUseStatement('App\\MyClass')
+
+    return phpFile.getCode()
+}</code></pre>
+<p><a name="templatereplacements"></a></p>
+<h3>templateReplacements</h3>
+<p>This Hook is called at the right time so that you can change Vemto's default templates using the <a href="../../../api-docs.vemto.app/Vemto.html">replaceTemplate API method</a>.</p>
+<p><br></p>
+<pre><code class="language-js">templateReplacements() {
+    vemto.log.message('Replacing stubs for AdminLTE...')
+
+    // Replace a Vemto default template
+    vemto.replaceTemplate(`Model.vemtl`, 'files/Model.vemtl')
+}</code></pre>
+<p><a name="copyablefiles"></a></p>
+<h3>copyableFiles</h3>
+<p>You can use this Hook to copy files into the Laravel project generated by Vemto. It must return an array of objects, where each object has the following properties:</p>
+<p><br></p>
+<ul>
+<li>from - indicates the file that should be copied (must be inside the plugin's directory, in a folder of your choice, for example, <code>/files</code>)</li>
+<li>to - the final file that will be generated, with the path relative to the Laravel project</li>
+</ul>
+<p><br></p>
+<p>Example:</p>
+<p><br></p>
+<pre><code class="language-js">copyableFiles() {
+    return [
+        {from: 'files/MyClass.php', to: 'app/Classes/MyClass.php'},
+        {from: 'files/MyOtherClass.php', to: 'app/Classes/MyOtherClass.php'},
+    ]
+}</code></pre>
+<p><a name="beforecodegenerationend"></a></p>
+<h3>beforeCodeGenerationEnd</h3>
+<p>Executes something just before code generation ends (for example a command, or the writing of some important file, or even a message in the log). Some Examples:</p>
+<p><br></p>
+<pre><code class="language-js">beforeCodeGenerationEnd() {
+    vemto.log.info('Code generation will finish...')
+},</code></pre>
+<pre><code class="language-js">beforeCodeGenerationEnd() {
+    vemto.executeCommand('php artisan migrate')
+},</code></pre>
+<pre><code class="language-js">beforeCodeGenerationEnd() {
+    let options = {
+        formatAs: 'php'
+    }
+
+    vemto.log.message('Generating tenancy files...')
+
+    vemto.renderTemplate('files/TenantScope.vemtl', 'app/Tenancy/TenantScope.php', options)
+}</code></pre>
+<p><a name="aftercodegenerationend"></a></p>
+<h3>afterCodeGenerationEnd</h3>
+<p>Executes something just before code generation ends (for example a command, or the writing of some important file, or even a message in the log). Some Examples:</p>
+<p><br></p>
+<pre><code class="language-js">afterCodeGenerationEnd() {
+    vemto.log.info('Code generation finished...')
+},</code></pre>
+<p><a name="addentitymarkers"></a></p>
+<h3>addEntityMarkers</h3>
+<p>This Hook is only used to add marks to Schema Editor entities, using the <a href="../../../api-docs.vemto.app/Vemto.html">addEntityMarker API method</a>. Example:</p>
+<p><br></p>
+<pre><code class="language-js">addEntityMarkers() {
+    let models = vemto.getProjectModels()
+
+    models.forEach(model =&gt; {
+        if(model.name !== 'User') return
+
+        vemto.addEntityMarker(model, 'User Model', '#ECC94B')
+    })
+},</code></pre>
+<p><br></p>
+<p>This code will add the following tag:</p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/143466162-4033dca5-d71c-465e-aeb9-613614d2d342.png" alt="image" /></p>
+<p><br></p>
+<p><a name="beforerunnerstart"></a></p>
+<h3>beforeRunnerStart</h3>
+<p>Executes something just before running the project (for example, if you want to start another server, or migrate something from a custom package). Example:</p>
+<p><br></p>
+<pre><code class="language-js">beforeRunnerStart() {
+    vemto.log.info('Will run the project...')
+
+    vemto.executeArtisan('migrate:fresh')
+},</code></pre>
+<p><br></p>
+<p>This hook is also important if you want to disable the default commands that are fired when you run the project:</p>
+<p><br></p>
+<pre><code class="language-js">beforeRunnerStart() {
+    // Disable the php artisan serve command 
+    vemto.disableDefaultRunnerServer()
+
+    // Disable the php artisan migrate command
+    vemto.disableDefaultRunnerMigrations()
+
+    // Disable opening the application url on the browser
+    vemto.disableDefaultRunnerWebPageTrigger()
+},</code></pre>
+<blockquote>
+<p>{info} This method was added on Vemto 1.0.1</p>
+</blockquote>
+<p><br></p>
+<p><a name="beforerunnerend"></a></p>
+<h3>beforeRunnerEnd</h3>
+<p>Executes something just before finishing to run the project. Example:</p>
+<p><br></p>
+<pre><code class="language-js">beforeRunnerEnd() {
+    vemto.openLink('http://localhost:8000')
+},</code></pre>
+<blockquote>
+<p>{info} This method was added on Vemto 1.0.1</p>
+</blockquote>
+<p><a name="the-vue-component"></a></p>
+<h2>The Vue component</h2>
+<p>A plugin's Vue component (usually Component.vue) is used to create a visual interface for the plugin. If your plugin doesn't need a visual interface, you can simply add a simple message like &quot;Plugin installed and working...&quot; to this component.</p>
+<p><br></p>
+<p>It's a common Vue component as you may already know, but it has access to some features of the <a href="../../../api-docs.vemto.app/Vemto.html">Vemto API</a>.</p>
+<p><br></p>
+<p>Below, let's learn about some of these features:</p>
+<p><a name="tailwindcss"></a></p>
+<h3>TailwindCSS</h3>
+<p>Vemto uses the TailwindCSS framework to build its entire interface. By creating a visual interface for your plugin, you will automatically be using it. However, there are some ready-made classes according to the Vemto interface that you can use:</p>
+<p><br></p>
+<ul>
+<li>For cards: .card, .item-card</li>
+<li>For inputs: .input, .small-input, .xs-input</li>
+<li>For buttons: .button, .button-primary, .button-secondary, .button-danger</li>
+<li>For checkboxes: .form-checkbox</li>
+<li>For radiobuttons: .form-radio</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>{info} Maintaining the plugin's visual consistency with the Vemto interface makes it easier to approve it for the Marketplace.</p>
+</blockquote>
+<p><a name="vemto-api"></a></p>
+<h3>Vemto API</h3>
+<p>The <a href="../../../api-docs.vemto.app/Vemto.html">API</a> is also available within the Vue component. However, since the visual part of the plugin does not have access to Hooks, it is not possible to use methods to generate or replace files, or to run on other important Hooks such as addEntityMarkers.</p>
+<p><br></p>
+<p>Tasks like: changing files and templates, writing files, etc. are always done in main.js.</p>
+<p><br></p>
+<p>One of the most common uses of the <a href="../../../api-docs.vemto.app/Vemto.html">API</a> within the Vue component is to get the data through the <a href="../../../api-docs.vemto.app/Vemto.html">getPluginData method</a> and to save it later using the <a href="../../../api-docs.vemto.app/Vemto.html">savePluginData method</a>.</p>
+<p><br></p>
+<p>Example:</p>
+<p><br></p>
+<pre><code class="language-js">data() {
+    return {
+        text: {},
+    }
+},
+
+created() {
+    let pluginData = window.vemtoApi.getPluginData()
+    this.text = pluginData.sidebarMode
+},
+
+methods: {
+    save() {
+        window.vemtoApi.savePluginData({
+            text: this.text,
+        })
+    }
+}</code></pre>
+<p><br></p>
+<p>Another common use is to debounce when saving data (for example, when you have an input and want to save the data while someone is typing). In order not to have to install a debounce library, Vemto already makes it available for you:</p>
+<p><br></p>
+<pre><code class="language-js">methods: {
+    // 500 ms debounce to save the data
+    save: window.vemtoApi.debounce(function() {
+        window.vemtoApi.savePluginData({
+            text: this.text
+        })
+    }, 500)
+}</code></pre>
+<blockquote>
+<p>{info} Always place a debounce if you want to save data as you type. This will facilitate the approval of your plugin on the Marketplace, and it helps a lot in the general performance of Vemto.</p>
+</blockquote>
+<p><a name="building-the-component"></a></p>
+<h3>Building the component</h3>
+<p>While creating your component, and after, publishing the component, you will need to compile it so that it will be recognized by Vemto. It is not possible to directly include the Component.vue file, it must first go through a process that transforms it into a library.</p>
+<blockquote>
+<p>{warning} Due to the new Vue CLI (@vue/cli) deprecating the old vue-cli, the command <strong>vue build ./src/Component.vue -t lib</strong> will not work to build the component, unless you are still using the old Vue CLI (in that case, just run this command inside the plugin folder). So, if you are using newest Vue CLI versions, please follow the steps below.</p>
+</blockquote>
+<p><br></p>
+<p>Firstly, install the new Vue CLI and the Vue CLI Service globally:</p>
+<pre><code class="language-text">-- Removing the old Vue CLI 
+npm uninstall vue-cli -g
+
+-- Installing Vue CLI globally
+npm install -g @vue/cli
+
+-- Installing the Vue CLI service
+npm install -g @vue/cli-service
+
+-- Installing the Vue template compiler globally (For Vue 2)
+npm i -g vue-template-compiler
+
+-- Installing the Vue template compiler globally (For Vue 3)
+npm i -g @vue/compiler-sfc
+</code></pre>
+<p><br></p>
+<p>After installing all the necessary stuff, just run the following command inside your plugin folder:</p>
+<p><br></p>
+<pre><code class="language-text">vue-cli-service build ./src/Component.vue --target lib --inline-vue</code></pre>
+<p><br></p>
+<p>As you can see, we are using the <strong>--target lib</strong> argument. This allows third-party packages included in Component.vue to be compiled along with your code, making it possible to create plugins that go beyond the possibilities of the <a href="../../../api-docs.vemto.app/Vemto.html">Vemto API</a>.</p>
+<p><br></p>
+<p>After the first compilation, be sure to add the compiled and minified component that is in the /dist folder in your package.json settings, if you haven't already:</p>
+<p><br></p>
+<pre><code class="language-json">{
+    "vueComponent": "dist/my-plugin.umd.min.js"
+}</code></pre>
+<blockquote>
+<p>{info} After a compilation, it may be necessary to perform a &quot;Reload&quot; of the plugin in Vemto so that the cache is cleared and the changes take effect.</p>
+</blockquote>
+<p><a name="vue-component-debug"></a></p>
+<h3>Vue component debug</h3>
+<p>If you want to show messages while creating your plugin component, you may use the <strong>Plugin Console</strong> to do it.</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/143464504-b8fe5b6e-db86-4310-aebf-2387f4c97bbe.png" alt="image" /></p>
+<p><br></p>
+<p>You can access the console methods using the <strong>window.vemtoApi.pluginConsole</strong> helper inside your Vue components. For example:</p>
+<pre><code class="language-js">window.vemtoApi.pluginConsole.log('Some message here')
+window.vemtoApi.pluginConsole.error('Something went wrong')
+
+// The .error method supports both errors and string messages
+try {
+    // ...
+} catch (error) {
+    window.vemtoApi.pluginConsole.error(error)
+    window.vemtoApi.pluginConsole.error('string message')
+}</code></pre>
+<p><a name="publish-on-the-marketplace"></a></p>
+<h2>Publish on the Marketplace</h2>
+<p>While we don't have a plugin submission form yet, you can send an email to <a href="contact%40vemto.html"><span class="__cf_email__" data-cfemail="f2919d9c86939186b284979f869ddc938282">[email&#160;protected]</span></a> with the link to your GitHub repository for us to review and add your plugin to the Marketplace.</p>
+<p><br></p>
+<p>To date, we do not support paid plugins. If you are interested in distributing a plugin for a fee, please contact us so we can discuss the options.</p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/1.x/creating_plugins by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:00:05 GMT -->
+</html>

@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x/cruds by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:14:37 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Cruds | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="../1.x/cruds.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="cruds.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../1.x/cruds.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-cruds"></a></p>
+<h1>Cruds</h1>
+<hr />
+<p>CRUD applications can be added from the <strong>Applications</strong> tab.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102631989-29780f80-412d-11eb-8f5a-53755fd3e98d.png" alt="Apps" /></p>
+<ul>
+<li><a href="cruds.html#-cruds"># Cruds</a></li>
+<li><a href="cruds.html#creating">Creating</a></li>
+<li><a href="cruds.html#crud-editor">CRUD Editor</a>
+<ul>
+<li><a href="cruds.html#input-components">Input Components</a></li>
+<li><a href="cruds.html#belongs-to-relationship-input">&quot;Belongs To&quot; Relationship Input</a></li>
+<li><a href="cruds.html#responsivity">Responsivity</a></li>
+<li><a href="cruds.html#validation">Validation</a></li>
+<li><a href="cruds.html#settings">Settings</a></li>
+<li><a href="cruds.html#api">API</a></li>
+</ul></li>
+</ul>
+<p><a name="creating"></a></p>
+<h2>Creating</h2>
+<p>To add a new CRUD application, you can click on the <strong>Add CRUD</strong> button under the <strong>Applications Tab</strong>.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102632722-36e1c980-412e-11eb-99a2-4c983a6b3cac.png" alt="image" /></p>
+<p><br/></p>
+<blockquote>
+<p>{info} After creating a new CRUD application, <em>Vemto</em> will automatically identify the Model fields and create the <strong>related inputs</strong> (including the <em>Relationship selects</em>).</p>
+</blockquote>
+<p><a name="crud-editor"></a></p>
+<h2>CRUD Editor</h2>
+<p>Clicking on an Application card, you can access the <em>CRUD Editor</em>. When you open it, it shows you the <em>Forms Tab</em>, where you can add/remove inputs, edit the form responsivity, and update all the components options.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102633478-401f6600-412f-11eb-84cc-7cbbd60d89f8.png" alt="image" /></p>
+<p><a name="input-components"></a></p>
+<h3>Input Components</h3>
+<p>To add a new Input Component, just click on it under the <em>Components Panel</em>. It will open a modal in that you can choose if you want to add a <strong>Standalone Component</strong> or a component <strong>Linked to a Model Field</strong>.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102638167-d9ea1180-4135-11eb-9fa8-84c288824147.png" alt="image" /></p>
+<p>Each <em>form input</em> has the following options:</p>
+<ul>
+<li><strong>Name</strong> - The input name (editable only for <em>standalone inputs</em>)</li>
+<li><strong>Label</strong> - The input label</li>
+<li><strong>Placeholder</strong> - The input placeholder</li>
+<li><strong>Default Value</strong> - The input default value</li>
+<li><strong>Min</strong> - The input min. value (only for numeric inputs)</li>
+<li><strong>Max</strong> - The input max. value (only for numeric inputs)</li>
+<li><strong>Items</strong> - The input items (only for selects or inputs with multiple options like radio group, checkbox group, etc) - this field is not editable for inputs linked with <em>model fields</em></li>
+<li><strong>Small Screen Size</strong> - The input size for small/mobile screens (available only on mobile mode)</li>
+<li><strong>Medium Screen Size</strong> - The input size for medium screens (available only on medium screen mode)</li>
+<li><strong>Large Screen Size</strong> - The input size for large screens (available only on large screen mode)</li>
+<li><strong>On Create</strong> - Defines if the input is shown on the Create page</li>
+<li><strong>On Update</strong> - Defines if the input is shown on the Edit page</li>
+<li><strong>On Show</strong> - Defines if the input is shown on the Show page</li>
+<li><strong>On Index</strong> - Defines if the input is shown on the Index page</li>
+</ul>
+<p><a name="belongs-to-relationship-input"></a></p>
+<h3>&quot;Belongs To&quot; Relationship Input</h3>
+<p>To add a <em>Belongs To</em> relationship input (a select input by default), just select a foreign field in the <em>Linked to Model Field</em> model when adding a new input.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102638973-1c601e00-4137-11eb-907b-534976c8057b.png" alt="image" /></p>
+<p><em>Linking to an FK field</em></p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102639185-6b0db800-4137-11eb-8d30-38d7477c835f.png" alt="image" /></p>
+<p><em>The added <strong>Select for Relationship</strong> </em></p>
+<blockquote>
+<p>{info} Even if you are not adding a <em>Select Input</em>, if you select an FK field, <em>Vemto</em> will always add a <em>Select for Relationship</em> input.</p>
+</blockquote>
+<p><a name="responsivity"></a></p>
+<h3>Responsivity</h3>
+<p>To change the <em>form inputs</em> responsivity, just select the <em>screen mode</em> on the <em>inputs area</em> top-right corner, then change the screen size on the <em>input options</em>.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102640068-b379a580-4138-11eb-941a-f14978cae08b.png" alt="image" /></p>
+<p><a name="validation"></a></p>
+<h3>Validation</h3>
+<p>The <em>Form Validation</em> settings are available under the <em>Validation Tab</em>. <em>Vemto</em> supports all <a href="../../../laravel.com/docs/8.x/validation.html">Laravel Validation rules</a> and has a built-in search to facilitate you selecting the correct rules.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102640299-05bac680-4139-11eb-9ef7-b90e94b82a9b.png" alt="image" /></p>
+<blockquote>
+<p>{info} <em>Vemto</em> will automatically generate the basic validation based on the field name, type, and settings</p>
+</blockquote>
+<p><a name="settings"></a></p>
+<h3>Settings</h3>
+<p>The <em>Form Settings</em> are available under the <em>Settings Tab</em>. Currently, the following options are available:</p>
+<ul>
+<li><strong>Name</strong> - The CRUD application name (the name that will appear on the Apps menu on the generated application)</li>
+<li><strong>Route/endpoint Suffix</strong> - Defines the route/endpoint suffix for the generated application</li>
+<li><strong>Index Page Title</strong> - Application title on the Index page</li>
+<li><strong>Create Page Title</strong> - Application title on the Create page</li>
+<li><strong>Edit Page Title</strong> - Application title on the Edit page</li>
+<li><strong>Show Page Title</strong> - Application title on the Show page</li>
+</ul>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102640802-ca6cc780-4139-11eb-91fe-ce3ba14b2af4.png" alt="image" /></p>
+<p><a name="api"></a></p>
+<h3>API</h3>
+<p>Under the <em>API tab</em>, you can select what <em>endpoints</em> you want to generate for the current CRUD application.</p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/109390372-04073f00-78f0-11eb-9b0e-b242a38ec331.gif" alt="image" /></p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x/cruds by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:14:37 GMT -->
+</html>

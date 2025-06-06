@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x/fields by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:13:22 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Fields | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="../1.x/fields.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="fields.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../1.x/fields.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-fields"></a></p>
+<h1>Fields</h1>
+<hr />
+<p>Fields can be added from the <strong>Entity Options</strong> panel (you can open this panel by clicking on the Entity). Vemto supports the majority of <a href="../../../laravel.com/docs/8.x/migrations.html">Laravel Migrations</a> field types and indexes.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102505324-9a9dc100-4060-11eb-96ca-380e3a3bef9f.png" alt="Schema" /></p>
+<ul>
+<li><a href="fields.html#-fields"># Fields</a></li>
+<li><a href="fields.html#creating">Creating</a></li>
+<li><a href="fields.html#field-options">Field Options</a></li>
+<li><a href="fields.html#special-faker-definition">Special faker definition</a></li>
+<li><a href="fields.html#foreign-key">Foreign Key</a></li>
+</ul>
+<p><a name="creating"></a></p>
+<h2>Creating</h2>
+<p>To add a new field, you can click on the <strong>Add Field</strong> button under the <strong>Entity Options</strong>. Then, just type the name and choose the type.</p>
+<blockquote>
+<p>{warning} It is <strong>highly recommended</strong> to use <em>lower case</em> field names</p>
+</blockquote>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102508473-2cf39400-4064-11eb-94d6-17417c301e81.png" alt="image" /></p>
+<blockquote>
+<p>{info} <em>Vemto</em> has a huge internal <strong>Fields Library</strong> and will try to automatically identify the field type, the faker, and the options based on the field name you wrote. For example, if you type &quot;slug&quot; on the field name, and the field doesn't have a type yet, <em>Vemto</em> automatically will suggest the <em>String</em> type, and will add the <em>&quot;$faker-&gt;slug&quot;</em> to the Faker property on the field options.</p>
+</blockquote>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102507231-c8840500-4062-11eb-94a2-dbefef50f815.gif" alt="image" /></p>
+<p><em>An example of Vemto automatically suggesting the field type and options</em></p>
+<p><br/></p>
+<p><a name="field-options"></a></p>
+<h2>Field Options</h2>
+<p>The field options are accessible by clicking on the <em>gears</em> icon right after the field type.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102509532-6bd61980-4065-11eb-8a93-96a02411fed1.png" alt="Field Options" /></p>
+<p>The available options are:</p>
+<ul>
+<li><strong>Nullable</strong> - Defines if the field is nullable or not</li>
+<li><strong>Hidden</strong> - Defines if the field is hidden or not (for example, the password field is hidden by default)</li>
+<li><strong>Fillable</strong> - Defines if the field is fillable or not (this option is visible when the project uses the <a href="projects.html#general-settings"><em>Fillable Mass Assignment strategy</em></a>)</li>
+<li><strong>Guarded</strong> - Defines if the field is guarded or not (this option is visible when the project uses the <a href="projects.html#general-settings"><em>Guarded Mass Assignment strategy</em></a>)</li>
+</ul>
+<blockquote>
+<p>{info} If you change the Mass Assignment strategy from <em>&quot;Fillable&quot;</em> to <em>&quot;Guarded&quot;</em>, <em>Vemto</em> automatically takes care of it and all the <em>fields mass assignment</em> will be updated accordingly</p>
+</blockquote>
+<ul>
+<li><strong>Unique</strong> - Defines if the field has a unique index</li>
+<li><strong>Index</strong> - Defines if the field has a plane index</li>
+<li><strong>Default Value</strong> - Sets the field default value</li>
+<li><strong>Faker</strong> - Defines the field <a href="../../../github.com/FakerPHP/Faker.html">faker</a> to seed dummy data and run the tests</li>
+<li><strong>Size</strong> - Defines the field size</li>
+<li><strong>Options</strong> - Defines the field sizes (only for <em>Enum</em> and <em>Set</em> field types)</li>
+<li><strong>Primary Key</strong> - Defines if the field is a primary key</li>
+</ul>
+<blockquote>
+<p>{danger} Entities can have only one <em>Primary Key</em>. If you change a field to a primary key type (ID, Big Increments, etc) or mark it as <em>Primary Key</em>, <em>Vemto</em> will remove the primary key constraint from the latest <em>PK</em> and will update all relationships and foreigns that relates to it to point to the new <em>PK</em></p>
+</blockquote>
+<ul>
+<li><strong>Foreign Key</strong> - Defines if the field is a Foreign Key</li>
+</ul>
+<p><a name="special-faker-definition"></a></p>
+<h2>Special faker definition</h2>
+<p>Besides supporting <a href="../../../github.com/FakerPHP/Faker.html">faker</a>, the fields support some special faker definitions too:</p>
+<ul>
+<li><strong>PHP Code</strong> - you can set a faker as a custom PHP code. For example, a code that randomly set a value for each time you run your seeders or factories: </li>
+</ul>
+<p><code>array_rand(array_flip(['apple', 'banana']), 1)</code></p>
+<ul>
+<li><strong>'{DEFAULT_OR_FIRST}'</strong> - use this value on your faker to seed with the field default value, or optionally the first option if you are dealing with an ENUM field (it will use the first option if the field has no default value)</li>
+<li><strong>{SIZE}</strong> - use this option to replace some section of your faker with the field size. For example, if you have a string field with a size of 64 characters, you can use <strong>Str::random({SIZE})</strong> on your faker, which will be translated to <strong>Str::random(64)</strong> on the generated code</li>
+<li><strong>Fixed Value</strong> - you can use a fixed value too. Just add it to the faker input on your field options. Please remember to add quotes (' or &quot;) if you are dealing with string values.</li>
+</ul>
+<p><img src="../../../user-images.githubusercontent.com/11933789/123297630-1d12ac00-d4ee-11eb-80a8-e1bbde94d32f.png" alt="image" /></p>
+<p><a name="foreign-key"></a></p>
+<h2>Foreign Key</h2>
+<p>When marking a field as Foreign Key, the following options are available:</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102513458-ffa9e480-4069-11eb-8e54-7a9b74dd6828.png" alt="Foreign Key Options" /></p>
+<ul>
+<li><strong>Reference Table/Model</strong> - Defines the foreign referenced table or model</li>
+<li><strong>Reference Field</strong> - Defines the foreign referenced field</li>
+<li><strong>On Update</strong> - Defines the SQL action to run when updating the foreign data. <em>E.g. CASCADE</em></li>
+<li><strong>On Delete</strong> - Defines the SQL action to run when deleting the foreign data. <em>E.g. CASCADE</em></li>
+</ul>
+<blockquote>
+<p>{warning} It is highly recommended to follow the <a href="../../../laravel.com/docs/8.x/eloquent.html#eloquent-model-conventions">Eloquent Model Conventions</a> when creating foreign keys</p>
+</blockquote>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x/fields by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:13:22 GMT -->
+</html>

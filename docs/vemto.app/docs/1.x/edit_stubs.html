@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/1.x/edit_stubs by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Editing Stubs/Templates | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="edit_stubs.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    1.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../0.x/edit_stubs.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="edit_stubs.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../1.html"
+            search-url="../search-index/1.html"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="plugins.html">Plugins</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Advanced</h2>
+<ul>
+<li><a href="edit_stubs.html">Editing Stubs/Templates</a></li>
+<li><a href="vet.html">Template Engine</a></li>
+<li><a href="creating_plugins.html">Creating Plugins</a></li>
+<li><a href="../../../api-docs.vemto.app/Vemto.html">API</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-editing-stubstemplates"></a></p>
+<h1>Editing Stubs/Templates</h1>
+<hr />
+<p><br></p>
+<p><strong>Video tutorial coming soon...</strong></p>
+<p><br></p>
+<p>With the Templates Editor, you can change the way that Vemto generates the code. All templates use Vemto Template Engine, so if you don't know how it works, you can learn more about it here.</p>
+<blockquote>
+<p>{info} Currently, on version 1.0.0, not all templates are available to edit. We will continuously add templates to the editor until we cover all the Code Generation process</p>
+</blockquote>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136405197-6dce4f02-b7d3-40b6-809a-22da8545147c.png" alt="image" /></p>
+<p><br/></p>
+<ul>
+<li><a href="edit_stubs.html#-editing-stubstemplates"># Editing Stubs/Templates</a></li>
+<li><a href="edit_stubs.html#considerations">Considerations</a></li>
+<li><a href="edit_stubs.html#coding-style">Coding Style</a></li>
+<li><a href="edit_stubs.html#data-editor">Data Editor</a></li>
+<li><a href="edit_stubs.html#formatters">Formatters</a></li>
+<li><a href="edit_stubs.html#handling-errors">Handling Errors</a></li>
+<li><a href="edit_stubs.html#playground-mode">Playground Mode</a></li>
+</ul>
+<p><a name="considerations"></a></p>
+<h2>Considerations</h2>
+<p>Before starting to edit Vemto Templates, there are some considerations to take in advance:</p>
+<p><br></p>
+<p><strong>1-</strong> It is highly recommended to learn <a href="vet.html">VET (Vemto Template Engine)</a> before editing the stubs. You can use the Playground mode to play with VET and to test templates when creating plugins. </p>
+<p><br></p>
+<p><strong>2-</strong> All pre-defined data used by a Template come from the current project. It is not possible to access data from another project in the <strong>Templates Editor</strong> screen.</p>
+<p><br></p>
+<p><strong>3-</strong> All Vemto templates have some data injected by default, using the <a href="vet.html">VET Data-Injection</a> mechanism:</p>
+<ul>
+<li><strong>this.project</strong> - a <a href="api/project.html">Project</a> instance representing the current project</li>
+<li><strong>this.projectHelper</strong> - A <a href="api/project-helper.html">ProjectHelper</a> instance that you can use to generate namespaces and other utilities</li>
+<li><strong>this.fileNameWithoutExtension</strong> - The name of the file that is being generated, but without extension. For example, if the file is <strong>UserController.php</strong>, this property value will be <strong>UserController</strong>.</li>
+<li><strong>this.generatorSettings</strong> - A <a href="generator-settings.html">GeneratorSettings object</a> with all the settings chosen in the <a href="generate.html">Generate Code</a> screen</li>
+</ul>
+<p><br></p>
+<p><strong>3-</strong> It is not necessary to enable the <a href="vet.html#indent-back-mode">indent-back mode</a>, as Vemto templates have a <a href="edit_stubs.html#formatters">pre-defined Formatter</a> that formats it after the generation following some patterns.</p>
+<p><a name="coding-style"></a></p>
+<h2>Coding Style</h2>
+<p><br></p>
+<p>Although VET doesn't define a specific code style, we created some rules to follow with the Vemto templates. It helps to improve their readability and maintainability.</p>
+<blockquote>
+<p>{info} Vemto templates are generally a mix of two types of code: the code you want to generate, and the code from <a href="vet.html">VET</a>, that controls the flux. So, if you don't follow some patterns, it is easy to end with <strong>spaghetti code</strong></p>
+</blockquote>
+<p>Here are some of the best practices:</p>
+<p><br></p>
+<p><strong>1-</strong> Use indentation in logic blocks whenever possible<br>
+<strong>2-</strong> Create internal variables in templates to make the code easier to read (add global template variables to the <strong>&lt;# TEMPLATE VARIABLES #&gt;</strong> section) <br>
+<strong>3-</strong> Use comments <strong>&lt;# --- #&gt;</strong> to separate different blocks of code<br>
+<strong>4-</strong> Use comments to explain more complex sections of code (unlike the common code for applications we are used to, templates code can quickly turn into something complex, so sometimes comments will be of tremendous help)<br></p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136406376-1437d7ce-57d8-4838-a80c-925c2971807e.png" alt="image" /></p>
+<p><a name="data-editor"></a></p>
+<h2>Data Editor</h2>
+<p>The data editor is a small screen used to &quot;mock&quot; the data used to compile each template. All the data here is directly passed to the <a href="vet.html">VET template</a> and could be accessed using the <strong>&quot;this&quot;</strong> identifier. </p>
+<p><br></p>
+<p>When working on <a href="edit_stubs.html#playground-mode">Playground Mode</a>, you have total control over the data. When editing the Data from a Vemto modified template, you can change the values, but not the keys (neither add other keys).</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136406537-242494fa-b5c7-487a-bcf6-5c5e23eaea64.png" alt="image" /></p>
+<p><br></p>
+<p>The data in the image above can be accessed using the following identifiers inside the template:</p>
+<p><br></p>
+<pre><code class="language-js">this.crud
+this.settings
+
+// Usage examples
+this.crud.name
+
+if(this.settings.requests) {
+    // ...
+}</code></pre>
+<p><a name="formatters"></a></p>
+<h2>Formatters</h2>
+<p>Formatters defines the way Vemto formats the code after it is compiled by <a href="vet.html">VET</a>. The following Formatters are available:</p>
+<p><br></p>
+<ul>
+<li><strong>PHP Formatter</strong> - formats the code as a valid <a href="../../../www.php-fig.org/psr/psr-2/index.html">PSR-2</a> PHP Code</li>
+<li><strong>JS Formatter</strong> - formats the code as javascript</li>
+<li><strong>HTML Formatter</strong> - formats the code as HTML</li>
+<li><strong>Blade Formatter</strong> - formats the code as Blade</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>{warning} You can change the Formatter to see how it works, but Vemto will always use the default Formatter when generating the code from default templates, even if modified.</p>
+</blockquote>
+<p><a name="handling-errors"></a></p>
+<h2>Handling Errors</h2>
+<p>When changing the template code, Vemto automatically compiles it to show in the right editor. If an error is found, it will be shown on the Errors tab.</p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136410361-af5e9464-d015-4ef7-a3e1-3b4037df2ded.png" alt="image" /></p>
+<p><br></p>
+<blockquote>
+<p>{info} Vemto does not open the errors tab by default because it is common to <strong>find errors while typing the code</strong>. So, don't worry much about this tab. You can open it only when necessary to find a specific error.</p>
+</blockquote>
+<p><a name="playground-mode"></a></p>
+<h2>Playground Mode</h2>
+<p>On the Playground Mode, you can freely write <a href="vet.html">VET</a> code and define data on the <a href="edit_stubs.html#data-editor">Data Editor</a>. This mode is util for <em>learning <a href="vet.html">VET</a>, testing hypotheses, and creating templates for custom plugins</em>. </p>
+<p><br></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/136410857-e31b860b-e35b-44ba-96b7-3c1c83ca2d96.png" alt="image" /></p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/1.x/edit_stubs by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:44 GMT -->
+</html>

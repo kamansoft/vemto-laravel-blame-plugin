@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+
+<!-- Mirrored from vemto.app/register by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:03:49 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+    <title>Vemto</title>
+
+    <!-- Scripts -->
+    <script src="js/app.js" defer></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" defer></script>
+    <script src="../cdn.jsdelivr.net/gh/alpinejs/alpine%40v2.x.x/dist/alpine.min.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="../fonts.googleapis.com/index.html">
+    <link rel="preconnect" href="../fonts.gstatic.com/index.html" crossorigin>
+    <link href="../fonts.googleapis.com/css26656.css?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="../unpkg.com/ionicons%404.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link href="css/app.css" rel="stylesheet">
+    <link href="../cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+
+    </head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-none">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo2.png" height="50" class="d-inline-block align-top" alt="">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+                        
+                        
+
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="../twitter.com/VemtoApp">Twitter</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" target="_blank" href="../github.com/login0d2e.html">Report Issues</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">
+                                Affiliates
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                        <!-- Authentication Links -->
+                                                    <li class="nav-item">
+                                <a class="nav-link" href="login.html">Login</a>
+                            </li>
+                                                            <li class="nav-item">
+                                    <a class="nav-link" href="register.html">Register</a>
+                                </li>
+                                                                        </ul>
+                </div>
+            </div>
+        </nav>
+
+        <main class="py-4">
+                        
+            
+            <div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body">
+
+                    <h4 class="card-title mb-5">Register</h4>
+
+                    <form method="POST" action="https://vemto.app/register">
+                        <input type="hidden" name="_token" value="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+                        <div class="form-group row">
+                            <label for="name" class="col-md-4 col-form-label text-md-right">Name</label>
+
+                            <div class="col-md-6">
+                                <input id="name" type="text" class="form-control " name="name" value="" required autocomplete="name" autofocus>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control " name="email" value="" required autocomplete="email">
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">Account Type</label>
+
+                            <div class="col-md-6">
+
+                                <select name="type" id="type" class="form-control" required>
+                                    <option value disabled selected>Please select an account type</option>
+                                    <option value="Developer" >Solo Developer</option>
+                                    <option value="Business" >Business</option>
+                                </select>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control " name="password" required autocomplete="new-password">
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">Confirm Password</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        
+                        <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">Captcha</label>
+
+                            <div class="col-md-6">
+                                <img src="images/captcha/01.png" alt="captcha" class="img-fluid mb-2">
+                                <input id="captcha" type="text" class="form-control " name="captcha" required>
+
+                                                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <small class="col-md-6 offset-md-4">
+                                By creating an account, you agree to our <a target="_blank" href="../adhesive-screen-52e.notion.site/Terms-of-Service-for-Vemto-09fa3867474f408faedcf6f793f2bb11c183.html?pvs=4">Terms of Service</a>, <a target="_blank" href="../adhesive-screen-52e.notion.site/Vemto-EULA-b82d215b6c5d4c9b930177df2e39cdd2.html">EULA</a> and <a target="_blank" href="../adhesive-screen-52e.notion.site/Privacy-Policy-for-Vemto-30ab8d23544c4a33bc7dd0bdd2fa7d3b.html">Privacy Policy</a>
+                            </small>
+                        </div>
+
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                                    Register
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="mt-5">
+                        <a href="login.html">Already have an account? Log in here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </main>
+    </div>
+
+    
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="../www.googletagmanager.com/gtag/jsfee0?id=UA-54501447-15"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-54501447-15');
+        </script>
+
+        <!-- Hotjar Tracking Code for https://vemto.app -->
+        <script>
+            (function(h,o,t,j,a,r){
+                h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+                h._hjSettings={hjid:2237514,hjsv:6};
+                a=o.getElementsByTagName('head')[0];
+                r=o.createElement('script');r.async=1;
+                r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+                a.appendChild(r);
+            })(window,document,'../static.hotjar.com/c/hotjar-','.js?sv=');
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/register by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:03:51 GMT -->
+</html>

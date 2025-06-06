@@ -1,0 +1,265 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/0.x/relationships by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:14:35 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Relationships | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="../1.x/relationships.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    0.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="relationships.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../1.x/relationships.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../0.html"
+            search-url="https://vemto.app/docs/search-index/0.x"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-relationships"></a></p>
+<h1>Relationships</h1>
+<hr />
+<p>Relationships can be added from the <strong>Entity Options</strong> panel (you can open this panel by clicking on the Entity).</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102540939-896ba900-408e-11eb-9156-673063997419.png" alt="Schema" /></p>
+<blockquote>
+<p>{info} <em>Vemto</em> will automatically generate the <strong>Foreign Keys</strong>, <strong>Pivot Tables</strong>, and the <strong>Inverse Relationship</strong> for created relationships. It is not necessary to create this kind of stuff manually (but you can do it if you want). </p>
+</blockquote>
+<ul>
+<li><a href="relationships.html#-relationships"># Relationships</a></li>
+<li><a href="relationships.html#creating">Creating</a></li>
+<li><a href="relationships.html#belongs-to">Belongs To</a></li>
+<li><a href="relationships.html#has-many-and-has-one">Has Many and Has One</a></li>
+<li><a href="relationships.html#belongs-to-many">Belongs To Many</a>
+<ul>
+<li><a href="relationships.html#pivot-table">Pivot Table</a></li>
+</ul></li>
+</ul>
+<p><a name="creating"></a></p>
+<h2>Creating</h2>
+<p>To add a new relationship, you can click on the <strong>Add Relationship</strong> button under the <strong>Entity Options</strong>. Then, just select the <em>relationship type</em> and the <em>related model</em> to show the type-specific relationship options.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102539690-c8006400-408c-11eb-8fda-8dcc49dbae22.png" alt="image" /></p>
+<p><a name="belongs-to"></a></p>
+<h2>Belongs To</h2>
+<p>A <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#one-to-many-inverse">Belongs To</a> relationship has the following options:</p>
+<ul>
+<li><strong>Relationship Name</strong> - By default, is the related model name in lower case</li>
+<li><strong>Foreign Key Name</strong> - <em>Vemto</em> will suggest the <em>foreign key</em> name following the Laravel standard (but you can change it if you want). If a field with this name exists in the local model, <em>Vemto</em> will use it. Otherwise, the field/foreign will be automatically added to the local model.</li>
+</ul>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102539977-29c0ce00-408d-11eb-9737-f3df5f236675.png" alt="image" /></p>
+<blockquote>
+<p>{info} After saving a <strong>&quot;Belongs To&quot;</strong> relationship, an inverse <strong>&quot;Has Many&quot;</strong> relationship will be automatically added to the <em>related model</em>.</p>
+</blockquote>
+<p><a name="has-many-and-has-one"></a></p>
+<h2>Has Many and Has One</h2>
+<p>A <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#one-to-many">Has Many</a> or <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#one-to-many">Has One</a> relationship has the following options:</p>
+<ul>
+<li><strong>Relationship Name</strong> - By default, is the related collection name in lower case</li>
+<li><strong>Foreign Key Name</strong> - <em>Vemto</em> will suggest the <em>foreign key</em> name following the Laravel standard (but you can change it if you want). If a field with this name exists in the related model, <em>Vemto</em> will use it. Otherwise, the field/foreign will be automatically added to the related model.</li>
+</ul>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102542667-e36d6e00-4090-11eb-8c68-c8b85f3e66ff.png" alt="image" /></p>
+<blockquote>
+<p>{info} After saving a <strong>&quot;Has Many&quot;</strong> or <strong>&quot;Has One&quot;</strong> relationship, an inverse <strong>&quot;Belongs To&quot;</strong> relationship will be automatically added to the <em>related model</em>.</p>
+</blockquote>
+<p><a name="belongs-to-many"></a></p>
+<h2>Belongs To Many</h2>
+<p>A <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#many-to-many">Belongs To Many</a> relationship has the following options:</p>
+<ul>
+<li><strong>Relationship Name</strong> - By default, is the related collection name in lower case</li>
+<li><strong>Pivot Table Name</strong> - Follows the default <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#many-to-many-table-structure">Laravel Convention for pivot tables</a>. If you decide to don't follow the standard convention, <em>Vemto</em> automatically sets the correct configuration inside the Model relationships (but it is always recommended to use the standard names). The pivot table will be created if it is not existing in the current schema</li>
+<li><strong>Local Model Key Name</strong> - The FK name for the local model on the pivot table</li>
+<li><strong>Joined Model Key Name</strong> - The FK name for the joined model on the pivot table</li>
+</ul>
+<blockquote>
+<p>{warning} <em>Vemto</em> will automatically suggest <em>foreign names</em> based on Laravel standards. If you are using a custom pivot table that doesn't follow the standards, it will be necessary to change the foreign names when creating the relationship</p>
+</blockquote>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102544936-53312800-4094-11eb-93b6-fe7678e31812.png" alt="image" /></p>
+<blockquote>
+<p>{info} After saving a <strong>Belongs To Many</strong> relationship, an inverse <strong>Belongs To Many</strong> relationship will be automatically added to the <em>related model</em>, and a <strong>Pivot Table</strong>, if necessary.</p>
+</blockquote>
+<p><a name="pivot-table"></a></p>
+<h3>Pivot Table</h3>
+<p>By default, <em>Vemto</em> automatically generates <em>Pivot Tables</em> when adding a <em>Belongs To Many</em> relationship. So, it is highly recommended to let <em>Vemto</em> take care of it.</p>
+<p><br/>
+But, if you want to add these pivot tables manually, please be sure to follow the <a href="../../../laravel.com/docs/8.x/eloquent-relationships.html#many-to-many-table-structure">Laravel Many to Many Relationships conventions</a> to make sure these tables work well with the <em>Eloquent ORM</em>.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/102630209-05b3ca00-412b-11eb-9e02-90ed80fb61e0.png" alt="Pivot Table" /></p>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/0.x/relationships by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Jun 2025 00:14:35 GMT -->
+</html>

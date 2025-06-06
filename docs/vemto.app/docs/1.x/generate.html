@@ -1,0 +1,297 @@
+<!doctype html>
+<html>
+    
+<!-- Mirrored from vemto.app/docs/1.x/generate by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+        <!-- META Tags -->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Generating Code | Vemto</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- SEO -->
+        <meta name="author" content="Vemto (Tigo Silva Pereira Rodrigues)">
+        <meta name="description" content="Vemto, a Laravel Code Generator and Studio - Documentation">
+        <meta name="keywords" content="vemto,laravel,code,generator,studio,programming,php,javascript">
+        <meta name="twitter:card" value="summary">
+                    <link rel="canonical" href="generate.html" />
+                                                                <meta property="og:title" content="Vemto, a Laravel Code Generator and Studio - Documentation" />
+                                                                <meta property="og:type" content="article" />
+                                                                                                                        
+        <!-- CSS -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/app.css">
+
+        
+        <!-- FontAwesome -->
+        <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome.css">
+                    <link rel="stylesheet" href="../../vendor/binarytorch/larecipe/assets/css/font-awesome-v4-shims.css">
+        
+        <!-- Dynamic Colors -->
+        <style>
+    :root {
+        --primary: #319795;
+        --secondary: #2c7a7b;
+    }
+
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+        border-top: 3px solid #319795;
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(87deg, #319795 0, #2c7a7b 100%) !important;
+    }
+
+    [v-cloak] > * { 
+        display: none; 
+    }
+    
+    [v-cloak]::before { 
+        content: " ";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #F2F6FA;
+    }
+</style>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="eY2iaibEwlpIP7tgkRBuflO5Ae6HnDrNIIyZRsiz">
+
+                                    <link rel="stylesheet" href="../styles/vemto.css">
+                    
+    </head>
+    <body>
+        <div id="app" v-cloak>
+            <div class="fixed pin-t pin-x z-40">
+    <div class="bg-gradient-primary text-white h-1"></div>
+
+    <nav class="flex items-center justify-between text-black bg-navbar shadow-xs h-16">
+        <div class="flex items-center flex-no-shrink">
+            <a href="../../index.html" class="flex items-center flex-no-shrink text-black mx-4">
+                <div>
+    <img src="../../images/logo2.png" class="d-inline-block align-top" alt="Vemto Logo" style="height: 30px;">
+</div>
+                <p class="inline-block font-semibold mx-1 ml-4 text-grey-dark">
+                    Vemto Docs
+                </p>
+            </a>
+
+            <div class="switch">
+                <input type="checkbox" name="1" id="1" v-model="sidebar" class="switch-checkbox" />
+                <label class="switch-label" for="1"></label>
+            </div>
+        </div>
+
+        <div class="block mx-4 flex items-center">
+                            <larecipe-button id="search-button"
+                    :type="searchBox ? 'primary' : 'link'"
+                    @click="searchBox = ! searchBox"
+                    class="px-4">
+                    <i class="fas fa-search" id="search-button-icon"></i>
+                </larecipe-button>
+            
+            
+
+            
+            <larecipe-dropdown>
+                <larecipe-button type="primary" class="flex">
+                    1.x <i class="mx-1 fa fa-angle-down"></i>
+                </larecipe-button>
+
+                <template slot="list">
+                    <ul class="list-reset">
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="../0.x/generate.html">0.x</a>
+                            </li>
+                                                    <li class="py-2 hover:bg-grey-lightest">
+                                <a class="px-6 text-grey-darkest" href="generate.html">1.x</a>
+                            </li>
+                                            </ul>
+                </template>
+            </larecipe-dropdown>
+            
+
+                    </div>
+    </nav>
+</div>
+            <internal-search-box
+            v-if="searchBox"
+            @close="searchBox = false"
+            version-url="../1.html"
+            search-url="../search-index/1.html"
+        ></internal-search-box>
+    
+            <div>
+	<div class="sidebar" :class="[{'is-hidden': ! sidebar}]">
+    <ul>
+<li>
+<h2>Get Started</h2>
+<ul>
+<li><a href="overview.html">Overview</a></li>
+<li><a href="installation.html">Installation</a></li>
+<li><a href="configuration.html">Configuration</a></li>
+<li><a href="upgrade.html">Upgrade</a></li>
+<li><a href="reporting.html">Reporting Issues</a></li>
+</ul>
+</li>
+<li>
+<h2>Features</h2>
+<ul>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="models.html">Models and Tables</a></li>
+<li><a href="fields.html">Fields and Foreigns</a></li>
+<li><a href="relationships.html">Relationships</a></li>
+<li><a href="cruds.html">Cruds</a></li>
+<li><a href="master_detail.html">Master Detail</a></li>
+<li><a href="plugins.html">Plugins</a></li>
+<li><a href="generate.html">Generating Code</a></li>
+<li><a href="migrations.html">Migrations Tracking</a></li>
+</ul>
+</li>
+<li>
+<h2>Advanced</h2>
+<ul>
+<li><a href="edit_stubs.html">Editing Stubs/Templates</a></li>
+<li><a href="vet.html">Template Engine</a></li>
+<li><a href="creating_plugins.html">Creating Plugins</a></li>
+<li><a href="../../../api-docs.vemto.app/Vemto.html">API</a></li>
+</ul>
+</li>
+<li>
+<h2>Other</h2>
+<ul>
+<li><a href="common_issues.html">Common Issues</a></li>
+<li><a href="backup.html">Backup</a></li>
+</ul>
+</li>
+</ul>
+</div>	
+	<div class="documentation is-dark" :class="{'expanded': ! sidebar}">
+		<p><a name="-generating-code"></a></p>
+<h1>Generating Code</h1>
+<hr />
+<p>The Code Generation is accessible from the <em>Generate Code</em> tab.</p>
+<p><br/></p>
+<p><img src="../../../user-images.githubusercontent.com/11933789/109542882-6bfe8680-7aa4-11eb-9432-153ef170ac67.png" alt="Generate Code" /></p>
+<ul>
+<li><a href="generate.html#-generating-code"># Generating Code</a></li>
+<li><a href="generate.html#generating-application-base">Generating Application Base</a></li>
+<li><a href="generate.html#applications">Applications</a></li>
+<li><a href="generate.html#modules">Modules</a>
+<ul>
+<li><a href="generate.html#permissions">Permissions</a></li>
+<li><a href="generate.html#permissions---api-endpoints">Permissions - API Endpoints</a></li>
+<li><a href="generate.html#auth-scaffold">Auth Scaffold</a></li>
+</ul></li>
+<li><a href="generate.html#admin-user">Admin User</a></li>
+</ul>
+<p><a name="generating-application-base"></a></p>
+<h2>Generating Application Base</h2>
+<p>Any <em>Vemto</em> project has the capability to generate the following file types by default:</p>
+<ul>
+<li>Migrations</li>
+<li>Models</li>
+<li>Factories</li>
+<li>Seeders</li>
+<li>Policies</li>
+<li>Routes</li>
+<li>API Routes</li>
+<li>API Auth with <a href="../../../laravel.com/docs/8.x/sanctum.html">Laravel Sanctum</a></li>
+</ul>
+<p><a name="applications"></a></p>
+<h2>Applications</h2>
+<p>After adding <a href="cruds-2.html">applications</a>, it is possible to generate the following code for each one:</p>
+<ul>
+<li><strong>Requests</strong> - When disabled, the validation will be generated directly on the <em>controller</em></li>
+<li><strong>Controller</strong> - The CRUD Controller</li>
+<li><strong>Tests</strong> - Generates the Tests for the application controllers and API (if enabled)</li>
+<li><strong>Views</strong> - Generates the applications views</li>
+<li><strong>API</strong> - Generates the API files (controllers and resources)</li>
+</ul>
+<blockquote>
+<p>{info} It is recommended to run the tests with <code>./vendor/bin/phpunit</code> inside the project folder after the code generation. It would help you to find bugs or mistakes before starting to implement your own code.</p>
+</blockquote>
+<p><a name="modules"></a></p>
+<h2>Modules</h2>
+<p>The following modules are currently available for code generation:</p>
+<p><a name="permissions"></a></p>
+<h3>Permissions</h3>
+<p>When enabled, the <em>&quot;Permissions Module&quot;</em> generates the following code:</p>
+<ul>
+<li>Installs <a href="../../../spatie.be/docs/laravel-permission/v3/introduction.html">this awesome permission package</a> from <a href="../../../spatie.be/index.html">Spatie.be</a></li>
+<li>Generates a seeder for basic roles</li>
+<li>Generates a seeder for basic permissions (all applications)</li>
+<li>Adds the admin role to the default user (<em><a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="4120252c282f0120252c282f6f222e2c">[email&#160;protected]</a>, password: admin</em>)</li>
+<li>Generates applications for Roles and Permissions</li>
+<li>Adds a way to assign roles to the Auth Model CRUD (<em>User by default</em>)</li>
+</ul>
+<p><a name="permissions-api-endpoints"></a></p>
+<h3>Permissions - API Endpoints</h3>
+<p>When enabled, the <em>&quot;Permissions - API Endpoints Module&quot;</em> generates the following code:</p>
+<ul>
+<li>Installs <a href="../../../spatie.be/docs/laravel-permission/v3/introduction.html">this awesome permission package</a> from <a href="../../../spatie.be/index.html">Spatie.be</a></li>
+<li>Generates a seeder for basic roles</li>
+<li>Generates a seeder for basic permissions (all applications)</li>
+<li>Adds the admin role to the default user (<em><a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="4e2f2a2327200e2f2a232720602d2123">[email&#160;protected]</a>, password: admin</em>)</li>
+<li>Generates endpoints for Roles and Permissions</li>
+<li>Adds a way to assign roles to the Auth Model (<em>User by default</em>) on the create/update endpoints (by sending an array of permissions or roles IDs on the roles/permissions attribute)</li>
+</ul>
+<p><a name="auth-scaffold"></a></p>
+<h3>Auth Scaffold</h3>
+<p>When enabled, the <em>&quot;Auth Scaffold module&quot;</em> will generate the application basic scaffold using the UI template chosen on project creation (Laravel UI, Jetstream, or Breeze).</p>
+<p><a name="admin-user"></a></p>
+<h2>Admin User</h2>
+<p>By default, <em>Vemto</em> generates a Seeder for an Admin user with the following credentials:</p>
+<ul>
+<li><strong>Email:</strong> <a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="355451585c5b755451585c5b1b565a58">[email&#160;protected]</a></li>
+<li><strong>Password:</strong> admin</li>
+</ul>
+<p>The <em>User model</em> receives a method <code>isSuperAdmin()</code> that is used to check for super-admin capabilities on <em>Policies</em>.</p>
+<p><br/></p>
+<p>When the permissions module is disabled, a simple array is added to the <code>auth.php</code> file to identify the super-admins:</p>
+<pre><code class="language-php">&lt;?php
+
+return [
+    'super_admins' =&gt; ['<a href="../../cdn-cgi/l/email-protection.html" class="__cf_email__" data-cfemail="0263666f6b6c4263666f6b6c2c616d6f">[email&#160;protected]</a>'],
+    // ...
+]</code></pre>
+<p>If the permissions module is enabled, it adds the following code to the <code>AuthServiceProvider.php</code> to implicitly grant &quot;Super Admin&quot; role all permissions </p>
+<pre><code class="language-php">Gate::before(function ($user, $ability) {
+    if ($user-&gt;isSuperAdmin()) {
+        return true;
+    }
+});</code></pre>
+			</div>
+</div>
+
+            <larecipe-back-to-top></larecipe-back-to-top>
+        </div>
+
+
+        <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+            window.config = [];
+        </script>
+
+        <script type="text/javascript">
+            if(localStorage.getItem('larecipeSidebar') == null) {
+                localStorage.setItem('larecipeSidebar', !! 1);
+            }
+        </script>
+
+        <script src="../../vendor/binarytorch/larecipe/assets/js/app.js"></script>
+
+        <script>
+            window.LaRecipe = new CreateLarecipe(config)
+        </script>
+
+        <!-- Google Analytics -->
+                <!-- /Google Analytics -->
+
+        
+        <script>
+            LaRecipe.run()
+        </script>
+    </body>
+
+<!-- Mirrored from vemto.app/docs/1.x/generate by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 05 Jun 2025 23:59:33 GMT -->
+</html>
